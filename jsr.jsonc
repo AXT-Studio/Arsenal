@@ -1,0 +1,20 @@
+{
+    "name": "@ayaexptech/arsenal",
+    "version": "0.1.0",
+    "exports": {
+        "./binary-search": "./dist/binary-search.mjs",
+    },
+    "include": [
+        "src",
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "exclude": [
+        "tests",
+        ".github",
+        ".gitignore",
+        ".git",
+        "node_modules"
+    ]
+}

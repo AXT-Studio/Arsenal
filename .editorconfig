@@ -1,0 +1,23 @@
+# EditorConfig - top-most EditorConfig file
+# https://editorconfig.org
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+tab_width = 4
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.yml]
+indent_size = 2
+
+[*.md]
+# Keep trailing whitespace in Markdown (for intentional line breaks)
+trim_trailing_whitespace = false
+
+[Makefile]
+# Makefiles require tabs
+indent_style = tab

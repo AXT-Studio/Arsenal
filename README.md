@@ -17,4 +17,32 @@ Supported LLMs
 
 ## Usage
 
-- jsDelivrなどのCDNを経由して、ES Moduleとして読み込んでください。
+AyaExpTech Arsenalは、JSR.ioで公開されています。
+
+### Web
+
+`esm.sh`経由でJSRパッケージを読み込むことができます。
+
+```js
+import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal/binary-search';
+```
+
+### Deno
+
+DenoはJSRをネイティブサポートしているため、以下のようにインポートできます。
+
+```js
+// Adhoc import
+import { lower_bound } from "jsr:@ayaexptech/arsenal@^0.1/binary-search";
+```
+
+### Node.js, Bun, Cloudflare Workers, etc.
+
+JSRはnpmの互換レイヤーを提供しているため、以下のようにインポートできます。
+
+```bash
+npx jsr add @ayaexptech/arsenal
+```
+```js
+import { lower_bound } from "@ayaexptech/arsenal/binary-search";
+```
