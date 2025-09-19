@@ -18,7 +18,7 @@ const DEFAULT_COMPARE_FN = (a, b) => {
 
 /**
  * 配列`array`に`target`と等しい値が存在するかどうかを、二分探索を用いて判定する。
- * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
+ * - 時間計算量: 最悪O(log(N)) (※Nは`array`の要素数)
  * @template T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
  * @param {T} target - 探索する値
@@ -51,9 +51,9 @@ const binary_search = (array, target, compareFn = DEFAULT_COMPARE_FN) => {
 
 /**
  * 配列`array`の中で、`target`以上と判定される最初の要素のインデックスを返す。
- * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
+ * - 時間計算量: 最悪O(log(N)) (※Nは`array`の要素数)
  *
- * @template T
+ * @template {any} T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
  * @param {T} target - 探索する値
  * @param {(a: T, b: T) => number} [compareFn] - 比較に用いる関数。デフォルト値はArray#sort()と同じ。
@@ -84,9 +84,9 @@ const lower_bound = (array, target, compareFn = DEFAULT_COMPARE_FN) => {
 
 /**
  * 配列`array`の中で、`target`より大きいと判定される最初の要素のインデックスを返す。
- * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
+ * - 時間計算量: 最悪O(log(N)) (※Nは`array`の要素数)
  *
- * @template T
+ * @template {any} T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
  * @param {T} target - 探索する値
  * @param {(a: T, b: T) => number} [compareFn] - 比較に用いる関数。デフォルト値はArray#sort()と同じ。
