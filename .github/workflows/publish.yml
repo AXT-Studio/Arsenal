@@ -28,6 +28,22 @@ jobs:
           npm install
           npm run build # 'package.json'に定義されたビルドスクリプトを実行
 
+      - name: Ensure jsr.json is present
+        # If jsr.jsonc exists, generate jsr.json from it. Otherwise ensure jsr.json exists.
+        run: |
+          set -e
+          if [ -f jsr.json ]; then
+            echo "jsr.json already exists"
+            exit 0
+          fi
+          if [ -f jsr.jsonc ]; then
+            echo "Generating jsr.json from jsr.jsonc"
+            node -e "const fs=require('fs'); const p='jsr.jsonc'; const out='jsr.json'; let s=fs.readFileSync(p,'utf8'); /* strip /* */ comments and // comments */ s=s.replace(/\/\*[\s\S]*?\*\//g,''); s=s.replace(/\/\/.*$/gm,''); /* remove trailing commas before } or ] */ s=s.replace(/,\s*([}\]])/g,'$1'); try{const obj=JSON.parse(s); fs.writeFileSync(out,JSON.stringify(obj,null,4)); console.log('wrote',out);}catch(e){console.error('Failed to parse jsr.jsonc:',e); console.error('Sanitized content:\n',s); process.exit(2);}"
+            exit 0
+          fi
+          echo "Error: neither jsr.json nor jsr.jsonc found" >&2
+          exit 1
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

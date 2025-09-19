@@ -13,9 +13,9 @@
         ".gitignore",
         ".git",
         "node_modules",
-        ".editorconfig",
+        ".editorconfig"
     ],
     "exports": {
         "./*": "./dist/*.mjs"
-    },
+    }
 }
