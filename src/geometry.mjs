@@ -74,8 +74,6 @@ class Vector2D {
     }
 };
 
-export { Vector2D };
-
 /**
  * 2次元空間における3点の位置関係を判定します。
  * - ベクトルの外積を利用して、3点が反時計回り、時計回り、または一直線上にあるかを判定します。
@@ -94,4 +92,42 @@ const CCW = (p0, p1, p2) => {
     if (crossProduct < -eps) return -1;
     return 0;
 };
-export { CCW };
+
+/**
+ * 2次元空間における線分の交差判定を行います。
+ * - 線分a (a1, a2) と線分b (b1, b2) が交差しているなら`true`、そうでないなら`false`を返します。
+ * @param {Vector2D} a1 - 線分aの始点
+ * @param {Vector2D} a2 - 線分aの終点
+ * @param {Vector2D} b1 - 線分bの始点
+ * @param {Vector2D} b2 - 線分bの終点
+ * @returns {boolean} - 交差している場合はtrue、そうでない場合はfalse (接してる場合はtrue)
+ */
+const isSegmentsIntersect = (a1, a2, b1, b2) => {
+    const t1 = CCW(a1, a2, b1);
+    const t2 = CCW(a1, a2, b2);
+    const t3 = CCW(b1, b2, a1);
+    const t4 = CCW(b1, b2, a2);
+
+    // 一般的なケース：互いの線分をまたいでいる
+    if (t1 * t2 < 0 && t3 * t4 < 0) {
+        return true;
+    }
+
+    // 特殊なケース：3点または4点が一直線上に並ぶ場合の処理
+    // a1-a2-b1 が一直線上で、b1が線分a1-a2上にある
+    if (t1 === 0 && (a1.sub(b1)).dot(a2.sub(b1)) <= 0) return true;
+    // a1-a2-b2 が一直線上で、b2が線分a1-a2上にある
+    if (t2 === 0 && (a1.sub(b2)).dot(a2.sub(b2)) <= 0) return true;
+    // b1-b2-a1 が一直線上で、a1が線分b1-b2上にある
+    if (t3 === 0 && (b1.sub(a1)).dot(b2.sub(a1)) <= 0) return true;
+    // b1-b2-a2 が一直線上で、a2が線分b1-b2上にある
+    if (t4 === 0 && (b1.sub(a2)).dot(b2.sub(a2)) <= 0) return true;
+
+    return false;
+};
+
+export {
+    Vector2D,
+    CCW,
+    isSegmentsIntersect
+};
