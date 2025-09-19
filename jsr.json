@@ -1,0 +1,21 @@
+{
+    "name": "@ayaexptech/arsenal",
+    "version": "0.1.0",
+    "include": [
+        "src",
+        "dist",
+        "README.md",
+        "LICENSE"
+    ],
+    "exclude": [
+        "tests",
+        ".github",
+        ".gitignore",
+        ".git",
+        "node_modules",
+        ".editorconfig"
+    ],
+    "exports": {
+        "./*": "./dist/*.mjs"
+    }
+}
