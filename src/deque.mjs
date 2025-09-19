@@ -1,13 +1,13 @@
 /**
- * 双方向キュー (Deque: Double-Ended Queue) を提供します。
- * 2つの配列を用いた実装により、両端への要素の追加・削除を償却$O(1)$で行うことができます。
+ * - 双方向キュー (Deque: Double-Ended Queue) を提供します。
+ * - 2つの配列を用いた実装により、両端への要素の追加・削除を償却$O(1)$で行うことができます。
  * @module deque
  */
 // @ts-check
 
 /**
  * 双方向キュー (Deque: Double-Ended Queue) クラス
- * 先頭と末尾の両方から効率的に要素の追加・削除が可能なデータ構造。
+ * - 先頭と末尾の両方から効率的に要素の追加・削除が可能なデータ構造。
  *
  * @template T - Dequeに格納される要素の型。
  * @example
@@ -35,8 +35,8 @@ class Deque {
      */
     #back;
     /**
-     * Deque() コンストラクター
-     * @param {Array<T>?} array - 初期値の配列
+     * 新しいDequeインスタンスを生成する
+     * @param {T[] | undefined} array - 初期値の配列
      * @constructor
      */
     constructor(array) {
@@ -64,7 +64,7 @@ class Deque {
     }
     /**
      * Dequeの先頭に値を挿入する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @param {T} value - 値
      * @returns {void}
      */
@@ -74,7 +74,7 @@ class Deque {
     }
     /**
      * Dequeの末尾に値を挿入する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @param {T} value - 値
      * @returns {void}
      */
@@ -84,7 +84,7 @@ class Deque {
     }
     /**
      * Dequeの先頭の値を削除して返す
-     * 時間計算量: 償却$O(1)$, 最悪$O(N)$
+     * - 時間計算量: 償却O(1), 最悪O(N) (※NはDequeの要素数)
      * @returns {T|undefined} - 先頭の値、またはundefined (空の場合)
      */
     shift() {
@@ -97,7 +97,7 @@ class Deque {
     }
     /**
      * Dequeの末尾の値を削除して返す
-     * 時間計算量: 償却$O(1)$, 最悪$O(N)$
+     * - 時間計算量: 償却O(1), 最悪O(N) (※NはDequeの要素数)
      * @returns {T|undefined} - 末尾の値、またはundefined (空の場合)
      */
     pop() {
@@ -110,7 +110,7 @@ class Deque {
     }
     /**
      * Dequeの先頭の値を参照する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @returns {T|undefined} - 先頭の値、またはundefined (空の場合)
      */
     first() {
@@ -123,7 +123,7 @@ class Deque {
     }
     /**
      * Dequeの末尾の値を参照する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @returns {T|undefined} - 末尾の値、またはundefined (空の場合)
      */
     last() {
@@ -136,7 +136,7 @@ class Deque {
     }
     /**
      * Dequeが空かどうかを判定する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @returns {boolean} - Dequeが空ならtrue
      */
     isEmpty() {
@@ -145,7 +145,7 @@ class Deque {
     }
     /**
      * Dequeを配列に変換する
-     * 時間計算量: 最悪$O(N)$
+     * - 時間計算量: 最悪O(N) (※NはDequeの要素数)
      * @returns {T[]} - Dequeの要素を含む配列
      */
     toArray() {
@@ -154,14 +154,14 @@ class Deque {
     }
     /**
      * Dequeのサイズを取得する
-     * 時間計算量: 最悪$O(1)$
+     * - 時間計算量: 最悪O(1)
      * @returns {number} - Dequeのサイズ
      */
     get size() {
         // #frontと#backの長さを合計して返す
         return this.#front.length + this.#back.length;
     }
-};
+}
 
 // ================================================================================================
 // ES Module Export

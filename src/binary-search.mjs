@@ -1,6 +1,6 @@
 /**
- * ソート済み配列に対して二分探索を行うメソッド群を提供します。
- * C++のSTLにある同名の関数にインスパイアされています。
+ * - ソート済み配列に対して二分探索を行うメソッド群を提供します。
+ * - C++のSTLにある同名の関数にインスパイアされています。
  * @module binary-search
  */
 // @ts-check
@@ -18,7 +18,7 @@ const DEFAULT_COMPARE_FN = (a, b) => {
 
 /**
  * 配列`array`に`target`と等しい値が存在するかどうかを、二分探索を用いて判定する。
- * (時間計算量: $O(\log N)$ )
+ * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
  * @template T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
  * @param {T} target - 探索する値
@@ -51,7 +51,7 @@ const binary_search = (array, target, compareFn = DEFAULT_COMPARE_FN) => {
 
 /**
  * 配列`array`の中で、`target`以上と判定される最初の要素のインデックスを返す。
- * (時間計算量: $O(\log n)$)
+ * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
  *
  * @template T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
@@ -84,7 +84,7 @@ const lower_bound = (array, target, compareFn = DEFAULT_COMPARE_FN) => {
 
 /**
  * 配列`array`の中で、`target`より大きいと判定される最初の要素のインデックスを返す。
- * (時間計算量: $O(\log n)$)
+ * - 時間計算量: 最悪O(log N) (※Nは`array`の要素数)
  *
  * @template T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
