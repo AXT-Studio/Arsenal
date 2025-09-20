@@ -48,4 +48,4 @@ jobs:
 
       # 5. JSRにパッケージを公開する
       - name: Publish to JSR
-        run: npx jsr publish
+        run: npx jsr publish --allow-dirty
