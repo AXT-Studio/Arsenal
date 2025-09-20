@@ -3,6 +3,7 @@
  * - C++のSTLにある`next_permutation`関数にインスパイアされています。
  * @module next-permutation
  */
+/* @ts-self-types="./next-permutation.d.ts" */
 // @ts-check
 
 /**
