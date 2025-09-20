@@ -1,9 +1,8 @@
 {
     "name": "@ayaexptech/arsenal",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "include": [
         "src",
-        "dist",
         "README.md",
         "LICENSE"
     ],
@@ -16,12 +15,12 @@
         ".editorconfig"
     ],
     "exports": {
-        "./binary-search": "./dist/binary-search.mjs",
-        "./deque": "./dist/deque.mjs",
-        "./geometry": "./dist/geometry.mjs",
-        "./math": "./dist/math.mjs",
-        "./next-permutation": "./dist/next-permutation.mjs",
-        "./union-find": "./dist/union-find.mjs",
-        "./unique-ids": "./dist/unique-ids.mjs"
+        "./binary-search": "./src/binary-search.mjs",
+        "./deque": "./src/deque.mjs",
+        "./geometry": "./src/geometry.mjs",
+        "./math": "./src/math.mjs",
+        "./next-permutation": "./src/next-permutation.mjs",
+        "./union-find": "./src/union-find.mjs",
+        "./unique-ids": "./src/unique-ids.mjs"
     }
 }
