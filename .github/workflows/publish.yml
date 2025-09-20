@@ -1,73 +1,51 @@
+# ワークフローの名前
 name: Publish to JSR
 
+# ワークフローが実行されるタイミングを指定
 on:
   push:
     tags:
-      - "v*.*.*" # vX.Y.Z 形式のタグがプッシュされたときにトリガー
-  workflow_dispatch: # 手動での実行も許可
+      # 'v'で始まるタグ（例: v1.0.0, v1.2.3）がプッシュされたときに実行
+      - "v*"
 
-permissions:
-  contents: read # ソースコードのチェックアウトに必要
-  id-token: write # JSRへのOIDC認証に必要
-
+# 実行される一連のジョブを定義
 jobs:
-  build:
+  publish:
+    # ジョブを実行する仮想環境OSを指定
     runs-on: ubuntu-latest
+    # JSRへの公開に必要な権限を設定
+    permissions:
+      contents: read
+      id-token: write
+
+    # ジョブのステップを定義
     steps:
-      - name: Checkout repository
+      # 1. リポジトリのコードをチェックアウトする
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      # 2. Node.js環境をセットアップする
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
-          cache: "npm"
+          node-version: "20" # 使用するNode.jsのバージョン
 
-      - name: Install dependencies and build
+      # 3. JavaScript minifyツール(terser)をインストールする
+      - name: Install terser
+        run: npm install -g terser
+
+      # 4. srcからdistへファイルをminifyしてコピーする
+      - name: Minify source files
         run: |
-          npm install
-          npm run build # 'package.json'に定義されたビルドスクリプトを実行
+          # distディレクトリを作成
+          mkdir dist
+          # srcディレクトリ内の全.mjsファイルをループ処理
+          for file in src/*.mjs; do
+            # terserでminifyし、distディレクトリに同名で保存
+            terser "$file" --compress --mangle -o "dist/$(basename "$file")"
+            echo "Minified $(basename "$file")"
+          done
 
-      - name: Ensure jsr.json is present
-        # If jsr.jsonc exists, generate jsr.json from it. Otherwise ensure jsr.json exists.
-        run: |
-          set -e
-          if [ -f jsr.json ]; then
-            echo "jsr.json already exists"
-            exit 0
-          fi
-          if [ -f jsr.jsonc ]; then
-            echo "Generating jsr.json from jsr.jsonc"
-            node -e "const fs=require('fs'); const p='jsr.jsonc'; const out='jsr.json'; let s=fs.readFileSync(p,'utf8'); /* strip /* */ comments and // comments */ s=s.replace(/\/\*[\s\S]*?\*\//g,''); s=s.replace(/\/\/.*$/gm,''); /* remove trailing commas before } or ] */ s=s.replace(/,\s*([}\]])/g,'$1'); try{const obj=JSON.parse(s); fs.writeFileSync(out,JSON.stringify(obj,null,4)); console.log('wrote',out);}catch(e){console.error('Failed to parse jsr.jsonc:',e); console.error('Sanitized content:\n',s); process.exit(2);}"
-            exit 0
-          fi
-          echo "Error: neither jsr.json nor jsr.jsonc found" >&2
-          exit 1
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: package-artifact
-          path: |
-            dist/
-            README.md
-            LICENSE
-            jsr.json
-
-  publish:
-    runs-on: ubuntu-latest
-    needs: build # buildジョブの成功後に実行
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: package-artifact
-
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
+      # 5. JSRにパッケージを公開する
       - name: Publish to JSR
-        # このツールがGitタグからバージョンを読み取り、jsr.jsonを更新して公開します
-        run: deno run -A jsr:@david/publish-on-tag@1
+        run: npx jsr publish
