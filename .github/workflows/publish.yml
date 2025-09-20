@@ -17,5 +17,55 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - name: Get Triggering Tag
+        id: get_tag
+        run: |
+          echo "GITHUB_REF=$GITHUB_REF"
+          # 期待される形式: refs/tags/vX.Y.Z
+          if [[ -z "$GITHUB_REF" ]]; then
+            echo "GITHUB_REF が見つかりません" >&2
+            exit 1
+          fi
+          if [[ "$GITHUB_REF" != refs/tags/* ]]; then
+            echo "タグによってトリガーされていません (GITHUB_REF=$GITHUB_REF)" >&2
+            exit 1
+          fi
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          if [[ -z "$TAG_NAME" ]]; then
+            echo "GITHUB_REF=$GITHUB_REF からタグ名を抽出できませんでした" >&2
+            exit 1
+          fi
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+
+      - name: Update jsr.json Version Field
+        run: |
+          echo "前のステップで取得したタグを使って jsr.json を更新します..."
+          # jq が無ければインストール（Ubuntu ランナー前提）
+          if ! command -v jq >/dev/null 2>&1; then
+            echo "jq が必要ですが見つかりません。jq をインストールします..."
+            sudo apt-get update && sudo apt-get install -y jq
+          fi
+          TAG="${{ steps.get_tag.outputs.tag }}"
+          if [[ -z "$TAG" ]]; then
+            echo "タグ変数が空です" >&2
+            exit 1
+          fi
+          # タグが先頭に小文字の 'v' を持つ場合、その先頭の 'v' のみを取り除く。
+          # その他の部分（例: -rc1 のようなプレリリース識別子）は変更しない。
+          if [[ "$TAG" == v* ]]; then
+            STRIPPED_TAG="${TAG#v}"
+          else
+            STRIPPED_TAG="$TAG"
+          fi
+          jq --arg ver "$STRIPPED_TAG" '.version = $ver' jsr.json > jsr.json.tmp && mv jsr.json.tmp jsr.json
+          echo "jsr.json の version を $STRIPPED_TAG に更新しました（元のタグ: $TAG）"
+      - name: Commit changes of jsr.json (local only)
+        run: |
+          # Git のユーザー情報を設定（Actions の自動コミット用）
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jsr.json
+          # 変更がない場合は commit が失敗するため、失敗してもパイプラインを継続する
+          git commit -m "chore: update jsr.json version for publish" || echo "no changes to commit"
       - name: Publish package
         run: npx jsr publish
