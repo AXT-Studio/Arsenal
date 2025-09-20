@@ -3,6 +3,7 @@
  * - C++のSTLにある同名の関数にインスパイアされています。
  * @module binary-search
  */
+/* @ts-self-types="./binary-search.d.ts" */
 // @ts-check
 
 /**
