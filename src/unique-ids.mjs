@@ -2,7 +2,7 @@
  * - 一意なIDを生成するためのユーティリティ関数を提供します。
  * @module unique-ids
  */
-/* @ts-self-types="./unique-ids.d.ts" */
+/* @ts-self-types="./declares/unique-ids.d.ts" */
 // @ts-check
 
 /**
