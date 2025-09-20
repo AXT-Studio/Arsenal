@@ -11,41 +11,11 @@ on:
 # 実行される一連のジョブを定義
 jobs:
   publish:
-    # ジョブを実行する仮想環境OSを指定
     runs-on: ubuntu-latest
-    # JSRへの公開に必要な権限を設定
     permissions:
       contents: read
       id-token: write
-
-    # ジョブのステップを定義
     steps:
-      # 1. リポジトリのコードをチェックアウトする
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # 2. Node.js環境をセットアップする
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20" # 使用するNode.jsのバージョン
-
-      # 3. JavaScript minifyツール(terser)をインストールする
-      - name: Install terser
-        run: npm install -g terser
-
-      # 4. srcからdistへファイルをminifyしてコピーする
-      - name: Minify source files
-        run: |
-          # distディレクトリを作成
-          mkdir dist
-          # srcディレクトリ内の全.mjsファイルをループ処理
-          for file in src/*.mjs; do
-            # terserでminifyし、distディレクトリに同名で保存
-            terser "$file" --compress --mangle -o "dist/$(basename "$file")"
-            echo "Minified $(basename "$file")"
-          done
-
-      # 5. JSRにパッケージを公開する
-      - name: Publish to JSR
-        run: npx jsr publish --allow-dirty --allow-slow-types
+      - uses: actions/checkout@v4
+      - name: Publish package
+        run: npx jsr publish --allow-slow-types --allow-dirty
