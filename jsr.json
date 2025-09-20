@@ -16,6 +16,12 @@
         ".editorconfig"
     ],
     "exports": {
-        "./*": "./dist/*.mjs"
+        "./binary-search": "./dist/binary-search.mjs",
+        "./deque": "./dist/deque.mjs",
+        "./geometry": "./dist/geometry.mjs",
+        "./math": "./dist/math.mjs",
+        "./next-permutation": "./dist/next-permutation.mjs",
+        "./union-find": "./dist/union-find.mjs",
+        "./unique-ids": "./dist/unique-ids.mjs"
     }
 }
