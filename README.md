@@ -19,6 +19,8 @@ Supported LLMs
 
 AyaExpTech Arsenalは、JSR.ioで公開されています。
 
+https://jsr.io/@ayaexptech/arsenal
+
 ### Web
 
 `esm.sh`経由でJSRパッケージを読み込むことができます。
