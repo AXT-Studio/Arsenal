@@ -5,11 +5,7 @@
 /* @ts-self-types="./../declares/unique-ids.d.ts" */
 // @ts-check
 
-/**
- * UUIDv7を生成します。
- * @param {number} [timestamp] - UNIXタイムスタンプ(ミリ秒単位)。省略すると現在の時刻が使用されます。
- * @returns {string} - 生成されたUUIDv7文字列
- */
+/** @type {(timestamp?: number) => string} UUIDv7を生成(UNIXタイムスタンプを指定可能、デフォは現在時刻) */
 const getUUIDv7 = (timestamp = Date.now()) => {
     // Validation: タイムスタンプが整数かつ48bit以内であることを確認
     if (
