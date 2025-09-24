@@ -2,7 +2,7 @@
  * 幾何学的な計算を行うためのクラス・関数群です。
  * @module geometry
  */
-/* @ts-self-types="./declares/geometry.d.ts" */
+/* @ts-self-types="./../declares/geometry.d.ts" */
 // @ts-check
 
 /**

@@ -3,7 +3,7 @@
  * - 経路圧縮とUnion by Sizeによる最適化が施されています。
  * @module union-find
  */
-/* @ts-self-types="./declares/union-find.d.ts" */
+/* @ts-self-types="./../declares/union-find.d.ts" */
 // @ts-check
 
 /**

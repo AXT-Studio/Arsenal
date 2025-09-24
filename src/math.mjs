@@ -2,7 +2,7 @@
  * - 数学関連の関数を提供します。
  * @module math
  */
-/* @ts-self-types="./declares/math.d.ts" */
+/* @ts-self-types="./../declares/math.d.ts" */
 // @ts-check
 
 /**

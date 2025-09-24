@@ -3,7 +3,7 @@
  * - 2つの配列を用いた実装により、両端への要素の追加・削除を償却$O(1)$で行うことができます。
  * @module deque
  */
-/* @ts-self-types="./declares/deque.d.ts" */
+/* @ts-self-types="./../declares/deque.d.ts" */
 // @ts-check
 
 /**
