@@ -3,8 +3,10 @@
  * - C++のSTLにある`next_permutation`関数にインスパイアされています。
  * @module next-permutation
  */
-/* @ts-self-types="./../declares/next-permutation.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/next-permutation.d.ts" />
+/* @ts-self-types="./../declares/next-permutation.d.ts" */
 
 /**
  * 呼び出されるたびに配列の次の順列を返すジェネレーター関数。`for...of`構文で回すことで順列全列挙が可能。

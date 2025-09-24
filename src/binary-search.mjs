@@ -3,10 +3,14 @@
  * - C++のSTLにある同名の関数にインスパイアされています。
  * @module binary-search
  */
-/* @ts-self-types="./../declares/binary-search.d.ts" */
-// @ts-check
 
-/** @type {(a: any, b: any) => number} Array#sort()でcompareFnを指定しなかったときのデフォルトの挙動と同じ挙動を示す比較関数 */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
+// @ts-check
+/// <reference path="./../declares/binary-search.d.ts" />
+/* @ts-self-types="./../declares/binary-search.d.ts" */
+
+
+/** @type {(a: unknown, b: unknown) => number} Array#sort()でcompareFnを指定しなかったときのデフォルトの挙動と同じ挙動を示す比較関数 */
 const DEFAULT_COMPARE_FN = (a, b) => {
     const [A, B] = [String(a), String(b)];
     return (A < B) ? -1 : (A > B) ? 1 : 0

@@ -1,7 +1,10 @@
+/** @type {(a: unknown, b: unknown) => number} Array#sort()でcompareFnを指定しなかったときのデフォルトの挙動と同じ挙動を示す比較関数 */
+declare const DEFAULT_COMPARE_FN: (a: unknown, b: unknown) => number;
+
 /**
  * 配列`array`に`target`と等しい値が存在するかどうかを、二分探索を用いて判定する。
  * - 時間計算量: 最悪O(log(N)) (※Nは`array`の要素数)
- * @template T
+ * @template {any} T
  * @param {T[]} array - `compareFn`を用いてソート済みの配列
  * @param {T} target - 探索する値
  * @param {(a: T, b: T) => number} [compareFn] - 比較に用いる関数。デフォルト値はArray#sort()と同じ。

@@ -2,8 +2,10 @@
  * 幾何学的な計算を行うためのクラス・関数群です。
  * @module geometry
  */
-/* @ts-self-types="./../declares/geometry.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/geometry.d.ts" />
+/* @ts-self-types="./../declares/geometry.d.ts" */
 
 /**
  * 2次元ベクトルを表すクラスです。平面上の点の座標や方向を表現するのに便利です。

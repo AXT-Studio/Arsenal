@@ -3,8 +3,10 @@
  * - 経路圧縮とUnion by Sizeによる最適化が施されています。
  * @module union-find
  */
-/* @ts-self-types="./../declares/union-find.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/union-find.d.ts" />
+/* @ts-self-types="./../declares/union-find.d.ts" */
 
 /**
  * Union-Find (Disjoint Set Union) データ構造

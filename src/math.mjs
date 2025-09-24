@@ -2,8 +2,10 @@
  * - 数学関連の関数を提供します。
  * @module math
  */
-/* @ts-self-types="./../declares/math.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/math.d.ts" />
+/* @ts-self-types="./../declares/math.d.ts" */
 
 /**
  * 2つの整数の最大公約数を求めます。

@@ -2,8 +2,10 @@
  * - 一意なIDを生成するためのユーティリティ関数を提供します。
  * @module unique-ids
  */
-/* @ts-self-types="./../declares/unique-ids.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/unique-ids.d.ts" />
+/* @ts-self-types="./../declares/unique-ids.d.ts" */
 
 /** @type {(timestamp?: number) => string} UUIDv7を生成(UNIXタイムスタンプを指定可能、デフォは現在時刻) */
 const getUUIDv7 = (timestamp = Date.now()) => {

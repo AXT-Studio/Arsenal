@@ -3,8 +3,10 @@
  * - 2つの配列を用いた実装により、両端への要素の追加・削除を償却$O(1)$で行うことができます。
  * @module deque
  */
-/* @ts-self-types="./../declares/deque.d.ts" */
+/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
+/// <reference path="./../declares/deque.d.ts" />
+/* @ts-self-types="./../declares/deque.d.ts" */
 
 /**
  * 双方向キュー (Deque: Double-Ended Queue) クラス
