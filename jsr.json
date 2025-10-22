@@ -22,6 +22,7 @@
         "./math": "./src/math.mjs",
         "./next-permutation": "./src/next-permutation.mjs",
         "./union-find": "./src/union-find.mjs",
-        "./unique-ids": "./src/unique-ids.mjs"
+        "./unique-ids": "./src/unique-ids.mjs",
+        "./bigint-math": "./src/bigint-math.mjs"
     }
 }

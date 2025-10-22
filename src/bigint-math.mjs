@@ -8,7 +8,11 @@
 /* @ts-self-types="./../declares/bigint-math.d.ts" */
 
 class BigIntMath {
-    /** @type {function(bigint): bigint} $n$の整数平方根を返す */
+    /**
+     * 整数`n`の平方根(を小数点以下切り捨てしたもの)を返します。
+     * @param {bigint} n
+     * @returns {bigint}
+     */
     static isqrt(n) {
         // nがbigint型でない場合はエラーを投げる
         if (typeof n !== "bigint") {
@@ -19,7 +23,7 @@ class BigIntMath {
             throw new RangeError("n must be non-negative");
         }
         // numberで正確に扱える範囲ならば、Math.sqrtを利用する
-        if (n < 2n ** 32n) {
+        if (n < 4294967296n) { // 2n ** 32n
             return BigInt(Math.floor(Math.sqrt(Number(n))));
         }
         // 漸化式の初期値
