@@ -23,7 +23,8 @@ class BigIntMath {
             return BigInt(Math.floor(Math.sqrt(Number(n))));
         }
         // 漸化式の初期値
-        const bitLength = BigInt(n.toString(2).length);
+        // より効率的なビット長の近似計算: 16進数文字列長 * 4
+        const bitLength = BigInt(n.toString(16).length * 4);
         let x0 = 1n << ((bitLength + 1n) / 2n);
         let x1 = (x0 + n / x0) / 2n; // 漸化式で次のステップの値を計算
 
