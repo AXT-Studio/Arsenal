@@ -18,13 +18,13 @@ class BigIntMath {
         if (n < 0n) {
             throw new RangeError("n must be non-negative");
         }
-        // numberで扱える範囲ならば、Math.sqrtを利用する
-        if (n < 9007199254740991n) {
+        // numberで正確に扱える範囲ならば、Math.sqrtを利用する
+        if (n < 2n ** 32n) {
             return BigInt(Math.floor(Math.sqrt(Number(n))));
         }
         // 漸化式の初期値
         const bitLength = BigInt(n.toString(2).length);
-        let x0 = 1n << (bitLength / 2n);
+        let x0 = 1n << ((bitLength + 1n) / 2n);
         let x1 = (x0 + n / x0) / 2n; // 漸化式で次のステップの値を計算
 
         // x1 が x0 より小さい間 = まだ収束していない間
