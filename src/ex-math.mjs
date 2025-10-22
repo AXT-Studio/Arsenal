@@ -29,8 +29,9 @@ class ExMath {
      * @returns {T} aとbの最小公倍数。引数と同じ型で返されます。
      */
     static lcm(a, b) {
-        if (a === 0 || b === 0) return /** @type {T} */ (0);
-        if (a === 0n || b === 0n) return /** @type {T} */ (0n);
+        if ((a === 0 || b === 0 || a === 0n || b === 0n)) {
+            return /** @type {T} */ (typeof a === "bigint" ? 0n : 0);
+        }
         return /** @type {T} */ ((a * b) / this.gcd(a, b));
     }
     /**
