@@ -10,6 +10,10 @@
 class BigIntMath {
     /** @type {function(bigint): bigint} $n$の整数平方根を返す */
     static isqrt(n) {
+        // nがbigint型でない場合はエラーを投げる
+        if (typeof n !== "bigint") {
+            throw new TypeError("n must be a bigint");
+        }
         // nが負の数の場合はエラーを投げる
         if (n < 0n) {
             throw new RangeError("n must be non-negative");
