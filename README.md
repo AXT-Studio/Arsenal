@@ -15,6 +15,12 @@ Supported LLMs
 - GitHub Copilot Chat (Model: GPT-4.1, GPT-5 mini)
 - Google Gemini (https://gemini.google.com, Model: Gemini 2.5 Pro)
 
+## Documents
+
+各種仕様などのドキュメントは以下のリンクから参照できます。
+
+- [公式ドキュメント (日本語)](https://arsenal.axtech.dev/)
+
 ## Usage
 
 AyaExpTech Arsenalは、JSR.ioで公開されています。
