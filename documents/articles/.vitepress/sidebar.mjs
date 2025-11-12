@@ -112,6 +112,17 @@ const sidebar = [
                 ]
             },
         ]
+    },
+    {
+        text: 'Tutorials',
+        items: [
+            {
+                text: 'How to use', items: [
+                    { text: 'Web', link: '/tutorials/how-to-use/web' },
+                    { text: 'Deno', link: '/tutorials/how-to-use/deno' },
+                ]
+            },
+        ]
     }
 ];
 export { sidebar };
