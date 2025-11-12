@@ -1,3 +1,3 @@
-# exports: bigint-math
+# entrypoint: bigint-math
 
 BigIntに関する数学的計算を行うためのユーティリティクラスを提供します。
