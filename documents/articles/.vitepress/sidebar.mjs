@@ -85,6 +85,32 @@ const sidebar = [
                     { text: 'function: getUUIDv7', link: '/specs/unique-ids/getUUIDv7' },
                 ]
             },
+            {
+                text: 'binary-heap', link: '/specs/binary-heap/', collapsed: true, items: [
+                    {
+                        text: 'class: BinaryHeap', link: '/specs/binary-heap/BinaryHeap/', collapsed: true, items: [
+                            { text: 'constructor: new BinaryHeap', link: '/specs/binary-heap/BinaryHeap/_constructor' },
+                            { text: 'getter: size', link: '/specs/binary-heap/BinaryHeap/size' },
+                            { text: 'method: push', link: '/specs/binary-heap/BinaryHeap/push' },
+                            { text: 'method: pop', link: '/specs/binary-heap/BinaryHeap/pop' },
+                            { text: 'method: peek', link: '/specs/binary-heap/BinaryHeap/peek' },
+                            { text: 'method: remove', link: '/specs/binary-heap/BinaryHeap/remove' },
+                            { text: 'method: update', link: '/specs/binary-heap/BinaryHeap/update' },
+                            { text: 'method: clear', link: '/specs/binary-heap/BinaryHeap/clear' },
+                        ]
+                    },
+                    {
+                        text: 'class: BinaryHeapLite', link: '/specs/binary-heap/BinaryHeapLite/', collapsed: true, items: [
+                            { text: 'constructor: new BinaryHeapLite', link: '/specs/binary-heap/BinaryHeapLite/_constructor' },
+                            { text: 'getter: size', link: '/specs/binary-heap/BinaryHeapLite/size' },
+                            { text: 'method: push', link: '/specs/binary-heap/BinaryHeapLite/push' },
+                            { text: 'method: pop', link: '/specs/binary-heap/BinaryHeapLite/pop' },
+                            { text: 'method: peek', link: '/specs/binary-heap/BinaryHeapLite/peek' },
+                            { text: 'method: clear', link: '/specs/binary-heap/BinaryHeapLite/clear' },
+                        ]
+                    }
+                ]
+            },
         ]
     }
 ];
