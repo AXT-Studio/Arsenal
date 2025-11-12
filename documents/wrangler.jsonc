@@ -1,0 +1,7 @@
+{
+    "name": "axtech-arsenal-docs",
+    "compatibility_date": "2025-11-13",
+    "assets": {
+        "directory": "./articles/.vitepress/dist"
+    }
+}

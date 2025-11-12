@@ -36,7 +36,7 @@ class Vector2D {
     dot(other) {
         return this.x * other.x + this.y * other.y;
     }
-    /** @type {function(Vector2D): number} ベクトルの外積 */
+    /** @type {function(Vector2D): number} 2次元ベクトルの「外積」に相当するスカラー値 */
     cross(other) {
         return this.x * other.y - this.y * other.x;
     }

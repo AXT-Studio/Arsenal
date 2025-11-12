@@ -13,16 +13,19 @@
         ".gitignore",
         ".git",
         "node_modules",
-        ".editorconfig"
+        ".editorconfig",
+        "documents",
+        "wrangler.jsonc"
     ],
     "exports": {
         "./binary-search": "./src/binary-search.mjs",
         "./deque": "./src/deque.mjs",
         "./geometry": "./src/geometry.mjs",
         "./ex-math": "./src/ex-math.mjs",
+        "./bigint-math": "./src/bigint-math.mjs",
         "./next-permutation": "./src/next-permutation.mjs",
         "./union-find": "./src/union-find.mjs",
         "./unique-ids": "./src/unique-ids.mjs",
-        "./bigint-math": "./src/bigint-math.mjs"
+        "./binary-heap": "./src/binary-heap.mjs"
     }
 }
