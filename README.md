@@ -41,7 +41,7 @@ DenoはJSRをネイティブサポートしているため、以下のように�
 
 ```js
 // Adhoc import
-import { lower_bound } from "jsr:@ayaexptech/arsenal@^0.1/binary-search";
+import { lower_bound } from "jsr:@ayaexptech/arsenal@^0.7/binary-search";
 ```
 
 ### Node.js, Bun, Cloudflare Workers, etc.
