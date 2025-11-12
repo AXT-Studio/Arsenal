@@ -33,4 +33,3 @@ console.log(heap.pop()); // undefined
 
 - 時間計算量
     - 最悪: $O(1)$
-        - `Map.clear()`が$O(1)$であると仮定した場合の計算量です。
