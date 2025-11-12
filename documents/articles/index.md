@@ -5,16 +5,24 @@ AyaExpTech Arsenalは、JavaScript向けの汎用ユーティリティライブ�
 
 ## Usage
 
-AyaExpTech Arsenalは、JSR.ioで公開されています。
+AyaExpTech Arsenalは[JSR.io](https://jsr.io/@ayaexptech/arsenal)で公開されています。
 
-https://jsr.io/@ayaexptech/arsenal
-
-- Web: `esm.sh`経由でJSRパッケージを読み込むことができます。
-    - 例: `import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.1.0/binary-search';`
-- Deno: DenoはJSR.ioをネイティブにサポートしています。
-    - 例: `import { lower_bound } from "jsr:@ayaexptech/arsenal@0.1.0/binary-search";`
-- Node.js, Bun, Cloudflare Workers, etc.: JSRはnpmの互換レイヤーを提供しているため、以下のようにインポートできます。
-    - 例: `npx jsr add @ayaexptech/arsenal` -> `import { lower_bound } from "@ayaexptech/arsenal@0.1.0/binary-search";`
+- Web: `esm.sh`からimport
+    ```js
+    import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.7.0/binary-search';
+    ```
+- Deno: JSRネイティブサポート
+    ```js
+    // Adhoc import
+    import { lower_bound } from "jsr:@ayaexptech/arsenal@0.7.0/binary-search";
+    ```
+- Node.js, Bun, Cloudflare Workers, etc.: JSR npm互換レイヤー
+    ```bash
+    npx jsr add @ayaexptech/arsenal
+    ```
+    ```js
+    import { lower_bound } from "@ayaexptech/arsenal@0.7.0/binary-search";
+    ```
 
 ## License
 
