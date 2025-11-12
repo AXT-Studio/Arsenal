@@ -12,3 +12,16 @@ export class BinaryHeap<T> {
     update(oldValue: T, newValue: T): boolean;
     clear(): void;
 }
+
+/**
+ * 二分ヒープ (Binary Heap) 軽量版
+ * push, pop, peek, size, clear のみをサポート
+ */
+export class BinaryHeapLite<T> {
+    constructor(compareFn?: (a: T, b: T) => number);
+    get size(): number;
+    push(value: T): void;
+    pop(): T | undefined;
+    peek(): T | undefined;
+    clear(): void;
+}
