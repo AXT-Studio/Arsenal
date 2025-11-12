@@ -1,5 +1,12 @@
 const sidebar = [
     {
+        text: 'Introduction', link: '/introduction/', collapsed: false, items: [
+            { text: 'What is "AyaExpTech Arsenal"?', link: '/introduction/what-is-arsenal' },
+            { text: 'Installation', link: '/introduction/installation' },
+            { text: 'Modules Overview', link: '/introduction/modules-overview' },
+        ]
+    },
+    {
         text: 'Specifications',
         items: [
             {
@@ -109,17 +116,6 @@ const sidebar = [
                             { text: 'method: clear', link: '/specs/binary-heap/BinaryHeapLite/clear' },
                         ]
                     }
-                ]
-            },
-        ]
-    },
-    {
-        text: 'Tutorials',
-        items: [
-            {
-                text: 'How to use', items: [
-                    { text: 'Web', link: '/tutorials/how-to-use/web' },
-                    { text: 'Deno', link: '/tutorials/how-to-use/deno' },
                 ]
             },
         ]

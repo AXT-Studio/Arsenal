@@ -23,34 +23,32 @@ Supported LLMs
 
 ## Usage
 
-AyaExpTech Arsenalは、JSR.ioで公開されています。
+AyaExpTech Arsenalは[JSR.io](https://jsr.io/@ayaexptech/arsenal)で公開されています。
 
-https://jsr.io/@ayaexptech/arsenal
+- Web: `esm.sh`からimport
+    ```js
+    import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.7.0/binary-search';
+    ```
+- Deno: JSRネイティブサポート
+    ```js
+    // Adhoc import
+    import { lower_bound } from "jsr:@ayaexptech/arsenal@0.7.0/binary-search";
+    ```
+- Node.js, Bun, Cloudflare Workers, etc.: JSR npm互換レイヤー
+    ```bash
+    npx jsr add @ayaexptech/arsenal
+    ```
+    ```js
+    import { lower_bound } from "@ayaexptech/arsenal@0.7.0/binary-search";
+    ```
 
-### Web
+詳細は[公式ドキュメントのInstallation](https://arsenal.axtech.dev/introduction/installation.md)を参照してください。
 
-`esm.sh`経由でJSRパッケージを読み込むことができます。
+## Contributing
 
-```js
-import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal/binary-search';
-```
-
-### Deno
-
-DenoはJSRをネイティブサポートしているため、以下のようにインポートできます。
-
-```js
-// Adhoc import
-import { lower_bound } from "jsr:@ayaexptech/arsenal@^0.7/binary-search";
-```
-
-### Node.js, Bun, Cloudflare Workers, etc.
-
-JSRはnpmの互換レイヤーを提供しているため、以下のようにインポートできます。
-
-```bash
-npx jsr add @ayaexptech/arsenal
-```
-```js
-import { lower_bound } from "@ayaexptech/arsenal/binary-search";
-```
+- バグ報告
+    - [GitHub Issues](https://github.com/AXT-Studio/Arsenal/issues)よりお願いします。
+- 機能追加
+    - 本リポジトリ自体が綾坂ことの学習目的を兼ねているため、外部からの機能追加は原則受け付けていません。ご了承ください。
+- ドキュメントの翻訳
+    - そのうち手を付けます。しばらくお待ちください。
