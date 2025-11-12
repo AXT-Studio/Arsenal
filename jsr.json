@@ -14,7 +14,8 @@
         ".git",
         "node_modules",
         ".editorconfig",
-        "documents"
+        "documents",
+        "wrangler.jsonc"
     ],
     "exports": {
         "./binary-search": "./src/binary-search.mjs",
