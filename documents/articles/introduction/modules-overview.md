@@ -9,6 +9,6 @@ AyaExpTech Arsenalは、複数のモジュールで構成されています。
 - [`ex-math`](./../specs/ex-math/): 数学計算(標準`Math`にないもの)
 - [`bigint-math`](./../specs/bigint-math/): BigInt向け数学計算
 - [`next-permutation`](./../specs/next-permutation/): 順列列挙
-- [`union-find`](./../specs/union-find/): Union-Find (Disjoint Set Union)
+- [`disjoint-set`](./../specs/disjoint-set/): Disjoint Set Union (Union-Find)
 - [`unique-ids`](./../specs/unique-ids/): Unique ID生成 (UUIDv7)
 - [`binary-heap`](./../specs/binary-heap/): 二分ヒープ (Priority Queue)

@@ -21,7 +21,7 @@ BigIntMath.isqrt(n)
 ## 例
 
 ```js
-import { BigIntMath } from 'path/to/bigint-math'
+import { BigIntMath } from 'path/to/bigint-math';
 const result = BigIntMath.isqrt(10n);
 console.log(result); // 3n
 ```

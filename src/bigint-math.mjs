@@ -41,6 +41,36 @@ class BigIntMath {
         // ループを抜けた時点の x0 が求める答え
         return x0;
     }
+    /**
+     * 整数`a`, 非負整数`n`, 正整数`m`について、`a ** n % m`を求めます。
+     * @param {bigint} a - 底 (整数)
+     * @param {bigint} n - 指数 (非負整数)
+     * @param {bigint} m - 法 (正整数)
+     * @returns {bigint} - `a ** n % m`の値
+     */
+    static modPow(a, n, m) {
+        // エラーハンドリング
+        if (n < 0n) {
+            throw new RangeError("指数nは非負整数でなければなりません。");
+        }
+        if (m <= 0n) {
+            throw new RangeError("法mは正整数でなければなりません。");
+        }
+        // m === 1のときは常に0を返す
+        if (m === 1n) return 0n;
+        // 繰り返し二乗法をやる
+        let result = 1n;
+        let base = a % m;
+        let exponent = n;
+        while (exponent > 0n) {
+            if (exponent % 2n === 1n) {
+                result = (result * base) % m;
+            }
+            base = (base * base) % m;
+            exponent = exponent / 2n;
+        }
+        return result;
+    }
 }
 
 // ================================================================================================

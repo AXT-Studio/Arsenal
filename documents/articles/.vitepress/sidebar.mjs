@@ -65,6 +65,7 @@ const sidebar = [
                     {
                         text: 'class: BigIntMath', link: '/specs/bigint-math/BigIntMath/', collapsed: true, items: [
                             { text: 'static method: isqrt', link: '/specs/bigint-math/BigIntMath/isqrt' },
+                            { text: 'static method: modPow', link: '/specs/bigint-math/BigIntMath/modPow' },
                         ]
                     },
                 ]
@@ -75,14 +76,14 @@ const sidebar = [
                 ]
             },
             {
-                text: 'union-find', link: '/specs/union-find/', collapsed: true, items: [
+                text: 'disjoint-set', link: '/specs/disjoint-set/', collapsed: true, items: [
                     {
-                        text: 'class: UnionFind', link: '/specs/union-find/UnionFind/', collapsed: true, items: [
-                            { text: 'constructor: new UnionFind', link: '/specs/union-find/UnionFind/_constructor' },
-                            { text: 'getter: componentCount', link: '/specs/union-find/UnionFind/componentCount' },
-                            { text: 'method: find', link: '/specs/union-find/UnionFind/find' },
-                            { text: 'method: union', link: '/specs/union-find/UnionFind/union' },
-                            { text: 'method: connected', link: '/specs/union-find/UnionFind/connected' },
+                        text: 'class: DisjointSet', link: '/specs/disjoint-set/DisjointSet/', collapsed: true, items: [
+                            { text: 'constructor: new DisjointSet', link: '/specs/disjoint-set/DisjointSet/_constructor' },
+                            { text: 'getter: componentCount', link: '/specs/disjoint-set/DisjointSet/componentCount' },
+                            { text: 'method: find', link: '/specs/disjoint-set/DisjointSet/find' },
+                            { text: 'method: union', link: '/specs/disjoint-set/DisjointSet/union' },
+                            { text: 'method: connected', link: '/specs/disjoint-set/DisjointSet/connected' },
                         ]
                     },
                 ]

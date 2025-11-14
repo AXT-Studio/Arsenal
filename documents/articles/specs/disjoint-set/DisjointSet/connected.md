@@ -5,7 +5,7 @@
 ## 構文
 
 ```js
-uf.connected(x, y);
+dsu.connected(x, y);
 ```
 
 ## 引数
@@ -23,11 +23,11 @@ uf.connected(x, y);
 ## 例
 
 ```js
-import { UnionFind } from 'path/to/union-find'
-const uf = new UnionFind(5);
-console.log(uf.connected(0, 1)); // false
-uf.union(0, 1);
-console.log(uf.connected(0, 1)); // true
+import { DisjointSet } from 'path/to/disjoint-set'
+const uf = new DisjointSet(5);
+console.log(dsu.connected(0, 1)); // false
+dsu.union(0, 1);
+console.log(dsu.connected(0, 1)); // true
 ```
 
 ## 計算量
