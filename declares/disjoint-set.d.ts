@@ -1,9 +1,9 @@
 /**
- * Union-Find (Disjoint Set Union) データ構造
+ * Disjoint Set Union(Union-Find) データ構造
  */
-export class UnionFind {
+export class DisjointSet {
     /**
-     * Union-Findのインスタンスを生成する
+     * Disjoint Set Unionのインスタンスを生成する
      */
     constructor(size: number);
     /**

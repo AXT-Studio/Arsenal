@@ -5,7 +5,7 @@
 ## 構文
 
 ```js
-uf.find(x);
+dsu.find(x);
 ```
 
 ## 引数
@@ -21,13 +21,13 @@ uf.find(x);
 ## 例
 
 ```js
-import { UnionFind } from 'path/to/union-find'
-const uf = new UnionFind(5);
-console.log(uf.find(0)); // 0
-console.log(uf.find(1)); // 1
-uf.union(0, 1);
-console.log(uf.find(0)); // 0
-console.log(uf.find(1)); // 0
+import { DisjointSet } from 'path/to/disjoint-set'
+const uf = new DisjointSet(5);
+console.log(dsu.find(0)); // 0
+console.log(dsu.find(1)); // 1
+dsu.union(0, 1);
+console.log(dsu.find(0)); // 0
+console.log(dsu.find(1)); // 0
 ```
 
 ## 計算量

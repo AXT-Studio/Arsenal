@@ -1,17 +1,17 @@
 /**
  * - 要素の集合を管理し、要素が同じ集合に属しているかの判定や、異なる集合の結合を効率的に行うデータ構造を提供します。
  * - 経路圧縮とUnion by Sizeによる最適化が施されています。
- * @module union-find
+ * @module disjoint-set
  */
 /* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
 // @ts-check
-/// <reference path="./../declares/union-find.d.ts" />
-/* @ts-self-types="./../declares/union-find.d.ts" */
+/// <reference path="./../declares/disjoint-set.d.ts" />
+/* @ts-self-types="./../declares/disjoint-set.d.ts" */
 
 /**
- * Union-Find (Disjoint Set Union) データ構造
+ *  Disjoint Set Union(Union-Find) データ構造
  */
-class UnionFind {
+class DisjointSet {
     /** @type {number[]} - #parents[i]は要素iの親のインデックス */
     #parents;
     /** @type {number[]} - #size[i]は要素iの属する木のサイズ (※根の要素でのみ有効) */
@@ -20,12 +20,12 @@ class UnionFind {
     #components;
 
     /**
-     * Union-Findのインスタンスを生成
+     * Disjoint Set Unionのインスタンスを生成
      * @param {number} size - 要素の数
      */
     constructor(size) {
         if (!Number.isInteger(size) || size <= 0) {
-            throw new Error('UnionFind: size must be a positive integer.');
+            throw new Error('DisjointSet: size must be a positive integer.');
         }
         this.#parents = [...Array(size).keys()];
         this.#size = Array(size).fill(1);
@@ -92,4 +92,4 @@ class UnionFind {
     }
 };
 
-export { UnionFind };
+export { DisjointSet };

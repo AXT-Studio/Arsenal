@@ -24,7 +24,7 @@
         "./ex-math": "./src/ex-math.mjs",
         "./bigint-math": "./src/bigint-math.mjs",
         "./next-permutation": "./src/next-permutation.mjs",
-        "./union-find": "./src/union-find.mjs",
+        "./disjoint-set": "./src/disjoint-set.mjs",
         "./unique-ids": "./src/unique-ids.mjs",
         "./binary-heap": "./src/binary-heap.mjs"
     }
