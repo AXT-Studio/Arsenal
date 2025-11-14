@@ -65,6 +65,7 @@ const sidebar = [
                     {
                         text: 'class: BigIntMath', link: '/specs/bigint-math/BigIntMath/', collapsed: true, items: [
                             { text: 'static method: isqrt', link: '/specs/bigint-math/BigIntMath/isqrt' },
+                            { text: 'static method: modPow', link: '/specs/bigint-math/BigIntMath/modPow' },
                         ]
                     },
                 ]
