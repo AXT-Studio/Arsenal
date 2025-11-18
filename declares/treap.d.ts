@@ -23,4 +23,5 @@ export class Treap<K, V> {
     lowerBound(key: K): { key: K; value: V } | undefined;
     upperBound(key: K): { key: K; value: V } | undefined;
     kthElement(k: number): { key: K; value: V } | undefined;
+    get size(): number;
 }

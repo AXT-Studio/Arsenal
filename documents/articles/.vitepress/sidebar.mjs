@@ -119,6 +119,22 @@ const sidebar = [
                     }
                 ]
             },
+            {
+                text: 'treap', link: '/specs/treap/', collapsed: true, items: [
+                    {
+                        text: 'class: Treap', link: '/specs/treap/Treap/', collapsed: true, items: [
+                            { text: 'constructor: new Treap', link: '/specs/treap/Treap/_constructor' },
+                            { text: 'getter: size', link: '/specs/treap/Treap/size' },
+                            { text: 'method: insert', link: '/specs/treap/Treap/insert' },
+                            { text: 'method: erase', link: '/specs/treap/Treap/erase' },
+                            { text: 'method: get', link: '/specs/treap/Treap/get' },
+                            { text: 'method: lowerBound', link: '/specs/treap/Treap/lowerBound' },
+                            { text: 'method: upperBound', link: '/specs/treap/Treap/upperBound' },
+                            { text: 'method: kthElement', link: '/specs/treap/Treap/kthElement' },
+                        ]
+                    }
+                ]
+            },
         ]
     }
 ];

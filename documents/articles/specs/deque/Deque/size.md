@@ -5,7 +5,7 @@
 ## 構文
 
 ```js
-deque.size()
+deque.size
 ```
 
 ### 戻り値

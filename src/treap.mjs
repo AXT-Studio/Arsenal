@@ -276,6 +276,13 @@ class Treap {
         }
         return undefined;
     }
+    /**
+     * Treap全体の要素数を取得します。
+     * @returns {number}
+     */
+    get size() {
+        return Treap.#getSize(this.root);
+    }
 }
 
 export {
