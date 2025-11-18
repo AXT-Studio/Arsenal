@@ -50,10 +50,10 @@ class TreapNode {
 class Treap {
     /** @type {TreapNode<any,any> | null} */
     root;
-    /** @type {(a: any, b: any) => number} -キーを比較するための関数。aがb未満なら負、aがbより大きいなら正、等しいなら0を返す。 */
+    /** @type {(a: any, b: any) => number} -キーを比較するための関数。aがbより先なら負、aがbより後なら正、順序が等しいなら0を返す。 */
     #keyCompareFn;
     /**
-     * @param {(a: any, b: any) => number} [keyCompareFn] - キーを比較するための関数。aがb未満なら負、aがbより大きいなら正、等しいなら0を返す。
+     * @param {(a: any, b: any) => number} [keyCompareFn] - キーを比較するための関数。aがbより先なら負、aがbより後なら正、順序が等しいなら0を返す。
      */
     constructor(keyCompareFn) {
         this.root = null;
@@ -90,7 +90,7 @@ class Treap {
      * @template V ノードの値の型
      * @param {TreapNode<K,V> | null} rootNode - 分割対象のTreapの根となるノード
      * @param {K} k - 分割の基準となるキー
-     * @param {(a: any, b: any) => number} keyCompareFn - キーを比較するための関数。aがb未満なら負、aがbより大きいなら正、等しいなら0を返す。
+     * @param {(a: any, b: any) => number} keyCompareFn - キーを比較するための関数。aがbより先なら負、aがbより後なら正、順序が等しいなら0を返す。
      * @returns {{ left: TreapNode<K,V> | null, right: TreapNode<K,V> | null }}
      */
     static #split(rootNode, k, keyCompareFn) {
@@ -115,7 +115,7 @@ class Treap {
      * @template V ノードの値の型
      * @param {TreapNode<K,V> | null} rootNode - 分割対象のTreapの根となるノード
      * @param {K} k - 分割の基準となるキー
-     * @param {(a: any, b: any) => number} keyCompareFn - キーを比較するための関数。aがb未満なら負、aがbより大きいなら正、等しいなら0を返す。
+     * @param {(a: any, b: any) => number} keyCompareFn - キーを比較するための関数。aがbより先なら負、aがbより後なら正、順序が等しいなら0を返す。
      * @returns {{ less: TreapNode<K,V> | null, equal: TreapNode<K,V> | null, greater: TreapNode<K,V> | null }}
      */
     static #splitThreeWays(rootNode, k, keyCompareFn) {
