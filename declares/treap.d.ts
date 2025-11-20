@@ -23,5 +23,13 @@ export class Treap<K, V> {
     lowerBound(key: K): { key: K; value: V } | undefined;
     upperBound(key: K): { key: K; value: V } | undefined;
     kthElement(k: number): { key: K; value: V } | undefined;
+    countAllComparisons(
+        key: K,
+    ): {
+        less: number;
+        lessEqual: number;
+        greater: number;
+        greaterEqual: number;
+    };
     get size(): number;
 }

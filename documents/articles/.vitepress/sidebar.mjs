@@ -131,6 +131,7 @@ const sidebar = [
                             { text: 'method: lowerBound', link: '/specs/treap/Treap/lowerBound' },
                             { text: 'method: upperBound', link: '/specs/treap/Treap/upperBound' },
                             { text: 'method: kthElement', link: '/specs/treap/Treap/kthElement' },
+                            { text: 'method: countAllComparisons', link: '/specs/treap/Treap/countAllComparisons' },
                         ]
                     }
                 ]

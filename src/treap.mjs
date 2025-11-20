@@ -277,6 +277,31 @@ class Treap {
         return undefined;
     }
     /**
+     * このTreap内にある、キーがkey(未満|以下|以上|超過)の要素の数を取得します。
+     * @template K ノードのキーの型
+     * @param {K} key
+     * @returns {{ less: number, lessEqual: number, greater: number, greaterEqual: number }}
+     */
+    countAllComparisons(key) {
+        if (!this.root) return { less: 0, lessEqual: 0, greater: 0, greaterEqual: 0 };
+        // 現在の木を"key未満"・"keyと等しい"・"keyより大きい"の3つに分割
+        const { less, equal, greater } = Treap.#splitThreeWays(this.root, key, this.#keyCompareFn);
+        // それぞれの要素数を取得
+        const lessCount = Treap.#getSize(less);
+        const equalCount = Treap.#getSize(equal);
+        const greaterCount = Treap.#getSize(greater);
+        // 元の木に戻す
+        const merged_left = Treap.#merge(less, equal);
+        this.root = Treap.#merge(merged_left, greater);
+        // 返す
+        return {
+            less: lessCount,
+            lessEqual: lessCount + equalCount,
+            greater: greaterCount,
+            greaterEqual: equalCount + greaterCount
+        };
+    }
+    /**
      * Treap全体の要素数を取得します。
      * @returns {number}
      */
