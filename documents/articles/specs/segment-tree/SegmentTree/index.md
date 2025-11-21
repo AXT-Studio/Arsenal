@@ -5,7 +5,7 @@
 :::info
 - セグメント木は、モノイド、具体的には以下の条件を満たすような集合$S$と二項演算$\cdot$に対して利用できます。
     - 結合法則: $(a \cdot b) \cdot c = a \cdot (b \cdot c) \quad \forall \{ a, b, c \} \subset S$
-    - 単位元の存在: $\exists e \in S \quad \text{such that} \forall a \in S, a \cdot e = e \cdot a = a$
+    - 単位元の存在: $\exists e \in S \quad \text{such that } \forall a \in S, a \cdot e = e \cdot a = a$
 :::
 
 ## 例
