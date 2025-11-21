@@ -12,3 +12,5 @@ AyaExpTech Arsenalは、複数のモジュールで構成されています。
 - [`disjoint-set`](./../specs/disjoint-set/): Disjoint Set Union (Union-Find)
 - [`unique-ids`](./../specs/unique-ids/): Unique ID生成 (UUIDv7)
 - [`binary-heap`](./../specs/binary-heap/): 二分ヒープ (Priority Queue)
+- [`treap`](./../specs/treap/): Treap (平衡二分探索木)
+- [`segment-tree`](./../specs/segment-tree/): セグメント木
