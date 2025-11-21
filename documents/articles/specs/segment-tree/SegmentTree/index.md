@@ -32,6 +32,6 @@ console.log(segTree.queryAll()); // 20
 const maxRight = segTree.maxRight(0, (x) => x < 15);
 console.log(maxRight); // 1 (区間[0, 1)の最大値は10で条件を満たすが、区間[0, 2)の最大値は20で条件を満たさない)
 // 条件を満たす最小の左端を取得
-const minLeft = segTree.minLeft(2, (x) => x < 15);
-console.log(minLeft); // 1 (区間[1, 2)の最大値は20で条件を満たさないが、区間[0, 2)の最大値は10で条件を満たす)
+const minLeft = segTree.minLeft(2, (x) => x > 15);
+console.log(minLeft); // 2 (区間[1, 2)の最大値は20で条件を満たす)
 ```

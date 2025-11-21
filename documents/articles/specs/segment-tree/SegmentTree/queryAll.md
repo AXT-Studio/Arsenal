@@ -26,11 +26,11 @@ const segTree = new SegmentTree(-Infinity, (a, b) => Math.max(a, b), 100);
 // 値の設定
 segTree.set(0, 10);
 segTree.set(1, 20);
-// 区間和の取得
+// 全区間モノイド積の取得
 console.log(segTree.queryAll()); // 20 (Math.max(10, 20))
 ```
 
 ## 計算量
 
 - 時間計算量
-    - 最悪: $O(\log N)$ ($N$はセグメント木のサイズ)
+    - 最悪: $O(1)$

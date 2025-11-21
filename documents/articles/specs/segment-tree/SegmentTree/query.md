@@ -12,7 +12,7 @@ segTree.query(left, right)
 ### 引数
 
 - `left: number`
-    - 区間の左端のインデックスです。`0`以上`size - 1`以下の範囲で指定します。
+    - 区間の左端のインデックスです。`0`以上`size`以下の範囲で指定します。
 - `right: number`
     - 区間の右端のインデックスです。`1`以上`size`以下の範囲で指定します。
     - `right`は`left`より大きい必要があります。
@@ -31,7 +31,7 @@ const segTree = new SegmentTree(-Infinity, (a, b) => Math.max(a, b), 100);
 // 値の設定
 segTree.set(0, 10);
 segTree.set(1, 20);
-// 区間和の取得
+// 区間モノイド積の取得
 console.log(segTree.query(0, 2)); // 20 (Math.max(10, 20))
 ```
 
