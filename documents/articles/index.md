@@ -34,5 +34,5 @@ Author
 
 Supported LLMs
 - GitHub Copilot Chat (Model: GPT-4.1, GPT-5 mini)
-- Google Gemini (https://gemini.google.com, Model: Gemini 2.5 Pro)
+- Google Gemini (https://gemini.google.com, Model: Gemini 2.5 Pro, Gemini 3.0 Pro)
 
