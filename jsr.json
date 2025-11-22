@@ -18,16 +18,17 @@
         "wrangler.jsonc"
     ],
     "exports": {
+        "./bigint-math": "./src/bigint-math.mjs",
+        "./binary-heap": "./src/binary-heap.mjs",
         "./binary-search": "./src/binary-search.mjs",
         "./deque": "./src/deque.mjs",
-        "./geometry": "./src/geometry.mjs",
-        "./ex-math": "./src/ex-math.mjs",
-        "./bigint-math": "./src/bigint-math.mjs",
-        "./next-permutation": "./src/next-permutation.mjs",
         "./disjoint-set": "./src/disjoint-set.mjs",
-        "./unique-ids": "./src/unique-ids.mjs",
-        "./binary-heap": "./src/binary-heap.mjs",
+        "./ex-math": "./src/ex-math.mjs",
+        "./ex-string": "./src/ex-string.mjs",
+        "./geometry": "./src/geometry.mjs",
+        "./next-permutation": "./src/next-permutation.mjs",
+        "./segment-tree": "./src/segment-tree.mjs",
         "./treap": "./src/treap.mjs",
-        "./segment-tree": "./src/segment-tree.mjs"
+        "./unique-ids": "./src/unique-ids.mjs"
     }
 }
