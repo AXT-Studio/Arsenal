@@ -43,6 +43,8 @@ const sidebar = [
                             { text: 'method: sub', link: '/specs/geometry/Vector2D/sub' },
                             { text: 'method: dot', link: '/specs/geometry/Vector2D/dot' },
                             { text: 'method: cross', link: '/specs/geometry/Vector2D/cross' },
+                            { text: 'property: x', link: '/specs/geometry/Vector2D/x' },
+                            { text: 'property: y', link: '/specs/geometry/Vector2D/y' },
                         ]
                     },
                     { text: 'function: CCW', link: '/specs/geometry/CCW' },
