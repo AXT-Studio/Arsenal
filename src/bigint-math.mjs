@@ -71,6 +71,53 @@ class BigIntMath {
         }
         return result;
     }
+    /**
+     * ミラー・ラビン素数判定法による素数判定を行います。
+     * @param {bigint} n - 判定する整数 (2以上)
+     * @param {bigint[]} [bases] - 判定に使用する基数の配列 (省略時は2^64未満で決定的になるよう選定)
+     * @returns {boolean} - 素数でなければfalse、素数かもしれなければtrue (bases省略時、n<2^64なら決定的)
+     */
+    static doMillerRabin(n, bases) {
+        // エラーハンドリング
+        if (n <= 1n) return false;
+        if (n === 2n) return true;
+        if (n % 2n === 0n) return false;
+        // 基数のリストを先に作っておく
+        const BASES = bases ?? [2n, 325n, 9375n, 28178n, 450775n, 9780504n, 1795265022n];
+        // n - 1 = 2^s * d の形に変形 (dが奇数になるまで2で割る)
+        let d = n - 1n;
+        let s = 0n;
+        while ((d & 1n) === 0n) {
+            d >>= 1n;
+            s += 1n;
+        }
+        // 各基数についてテストを行う
+        for (const a of BASES) {
+            // n自体が底のリストに含まれている場合は素数
+            if (a === n) return true;
+            // (効率化) nが底の倍数なら合成数 (例: n=9, a=3)
+            if (n % a === 0n) return false;
+            // x = a^d mod n
+            let x = BigIntMath.modPow(a, d, n);
+            // x = 1 または x = n - 1 なら「素数っぽい」ので次の底へ
+            if (x === 1n || x === n - 1n) continue;
+            // xを2乗していき、n - 1 になるかチェック (s-1回繰り返す)
+            let isProbablyPrime = false;
+            for (let r = 1n; r < s; r++) {
+                x = (x * x) % n;
+                if (x === n - 1n) {
+                    isProbablyPrime = true;
+                    break;
+                }
+            }
+            // n - 1 にならなかった場合は合成数
+            if (!isProbablyPrime) {
+                return false;
+            }
+        }
+        // すべての基数で「素数っぽい」場合は素数かもしれない
+        return true;
+    }
 }
 
 // ================================================================================================
