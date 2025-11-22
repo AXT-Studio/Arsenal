@@ -27,6 +27,7 @@
         "./disjoint-set": "./src/disjoint-set.mjs",
         "./unique-ids": "./src/unique-ids.mjs",
         "./binary-heap": "./src/binary-heap.mjs",
-        "./treap": "./src/treap.mjs"
+        "./treap": "./src/treap.mjs",
+        "./segment-tree": "./src/segment-tree.mjs"
     }
 }

@@ -8,7 +8,7 @@
 binaryHeap.size
 ```
 
-## 戻り値
+### 戻り値
 
 - `number`
     - `BinaryHeapLite`インスタンスの要素数を返します。

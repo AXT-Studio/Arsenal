@@ -8,7 +8,7 @@
 dsu.componentCount;
 ```
 
-## 戻り値
+### 戻り値
 
 - `number`
     - 現在の連結成分の数を返します。

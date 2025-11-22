@@ -5,7 +5,7 @@
 ## 構文
 
 ```js
-new DisjointSet(size);
+new DisjointSet(size)
 ```
 
 ### 引数

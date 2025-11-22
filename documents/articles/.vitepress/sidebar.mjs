@@ -43,6 +43,8 @@ const sidebar = [
                             { text: 'method: sub', link: '/specs/geometry/Vector2D/sub' },
                             { text: 'method: dot', link: '/specs/geometry/Vector2D/dot' },
                             { text: 'method: cross', link: '/specs/geometry/Vector2D/cross' },
+                            { text: 'property: x', link: '/specs/geometry/Vector2D/x' },
+                            { text: 'property: y', link: '/specs/geometry/Vector2D/y' },
                         ]
                     },
                     { text: 'function: CCW', link: '/specs/geometry/CCW' },
@@ -136,6 +138,22 @@ const sidebar = [
                     }
                 ]
             },
+            {
+                text: 'segment-tree', link: '/specs/segment-tree/', collapsed: true, items: [
+                    {
+                        text: 'class: SegmentTree', link: '/specs/segment-tree/SegmentTree/', collapsed: true, items: [
+                            { text: 'constructor: new SegmentTree', link: '/specs/segment-tree/SegmentTree/_constructor' },
+                            { text: 'getter: size', link: '/specs/segment-tree/SegmentTree/size' },
+                            { text: 'method: set', link: '/specs/segment-tree/SegmentTree/set' },
+                            { text: 'method: get', link: '/specs/segment-tree/SegmentTree/get' },
+                            { text: 'method: query', link: '/specs/segment-tree/SegmentTree/query' },
+                            { text: 'method: queryAll', link: '/specs/segment-tree/SegmentTree/queryAll' },
+                            { text: 'method: maxRight', link: '/specs/segment-tree/SegmentTree/maxRight' },
+                            { text: 'method: minLeft', link: '/specs/segment-tree/SegmentTree/minLeft' },
+                        ]
+                    }
+                ]
+            }
         ]
     }
 ];
