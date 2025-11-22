@@ -95,6 +95,15 @@ const sidebar = [
                 ]
             },
             {
+                text: 'ex-string', link: '/specs/ex-string/', collapsed: true, items: [
+                    {
+                        text: 'class: ExString', link: '/specs/ex-string/ExString/', collapsed: true, items: [
+                            { text: 'static method: runLengthEncode', link: '/specs/ex-string/ExString/runLengthEncode' },
+                        ]
+                    },
+                ]
+            },
+            {
                 text: 'geometry', link: '/specs/geometry/', collapsed: true, items: [
                     {
                         text: 'class: Vector2D', link: '/specs/geometry/Vector2D/', collapsed: true, items: [
