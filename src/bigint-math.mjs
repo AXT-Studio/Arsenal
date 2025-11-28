@@ -93,9 +93,11 @@ class BigIntMath {
         }
         // 各基数についてテストを行う
         for (const a of BASES) {
-            // n自体が底のリストに含まれている場合は素数
+            // 底が n と等しい場合は素数
             if (a === n) return true;
-            // (効率化) nが底の倍数なら合成数 (例: n=9, a=3)
+            // 底が n の倍数 (a % n === 0) の場合は skip（mod n が 0 になり x=0 となって誤判定するため）
+            if (a % n === 0n) continue;
+            // (効率化) n が底の倍数なら合成数 (例: n=9, a=3)
             if (n % a === 0n) return false;
             // x = a^d mod n
             let x = BigIntMath.modPow(a, d, n);
