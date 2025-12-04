@@ -154,6 +154,7 @@ const sidebar = [
                             { text: 'method: upperBound', link: '/specs/treap/Treap/upperBound' },
                             { text: 'method: kthElement', link: '/specs/treap/Treap/kthElement' },
                             { text: 'method: countAllComparisons', link: '/specs/treap/Treap/countAllComparisons' },
+                            { text: 'generator method: [Symbol.iterator]', link: '/specs/treap/Treap/Symbol.iterator' },
                         ]
                     }
                 ]
