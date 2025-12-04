@@ -1,39 +1,38 @@
-/**
- * セグメント木を提供します。
- * 長さNの配列に対して、要素の1点更新と区間のモノイド積の計算をO(log N)で行うことができます。
- * @module segment-tree
- */
+// ================================================================================================
+// entrypoint: segment-tree
+// セグメント木を提供します。
+// 長さNの配列に対して、要素の1点更新と区間のモノイド積の計算をO(log N)で行うことができます。
+// ================================================================================================
 
-/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
-// @ts-check
-/// <reference path="./../declares/segment-tree.d.ts" />
-/* @ts-self-types="./../declares/segment-tree.d.ts" */
+// ================================================================
+// クラス本体
+// ================================================================
 
-/**
- * セグメント木を表すクラスです。
- * @class SegmentTree
- * @template T - セグメント木に格納する要素の型
- */
-class SegmentTree {
-    /** @type {T} - 単位元 */
-    #e;
-    /** @type {(a: T, b: T) => T} - モノイド演算を表す関数 */
-    #op;
-    /** @type {number} - セグメント木のサイズ */
-    #size;
-    /** @type {number} - セグメント木のコンストラクタに渡されたサイズ */
-    #originalSize;
-    /** @type {T[]} - セグメント木の内部配列 */
-    #tree;
+class SegmentTree<T> {
+    /** 単位元 */
+    #e: T;
+    /**モノイド演算を表す関数 */
+    #op: (a: T, b: T) => T;
+    /** セグメント木のサイズ */
+    #size: number;
+    /** セグメント木のコンストラクタに渡されたサイズ */
+    #originalSize: number;
+    /** セグメント木の内部配列 */
+    #tree: T[];
 
     /**
      * セグメント木の新しいインスタンスを生成します。
-     * @param {T} e - 単位元
-     * @param {(a: T, b: T) => T} op - モノイド演算を表す関数
-     * @param {number} size - セグメント木のサイズ
-     * @param {T[]} [initialValues] - 初期値の配列(sizeに満たない分はeで埋められます)
+     * @param e - 単位元
+     * @param op - モノイド演算を表す関数
+     * @param size - セグメント木のサイズ
+     * @param [initialValues] - 初期値の配列(sizeに満たない分はeで埋められます)
      */
-    constructor(e, op, size, initialValues) {
+    constructor(
+        e: T,
+        op: (a: T, b: T) => T,
+        size: number,
+        initialValues?: T[],
+    ) {
         // eとopはそのまま保存
         this.#e = e;
         this.#op = op;
@@ -49,40 +48,46 @@ class SegmentTree {
             }
             // 前半を構築 (initialValuesが与えられなかった場合はeのままなので飛ばされる)
             for (let i = this.#size - 1; i > 0; i--) {
-                this.#tree[i] = this.#op(this.#tree[i * 2], this.#tree[i * 2 + 1]);
+                this.#tree[i] = this.#op(
+                    this.#tree[i * 2],
+                    this.#tree[i * 2 + 1],
+                );
             }
         }
     }
     /**
      * インデックス`index`の要素を`value`に更新します。
-     * @param {number} index - 更新する要素のインデックス (0-based)
-     * @param {T} value - 新しい値
+     * @param index - 更新する要素のインデックス (0-based)
+     * @param value - 新しい値
      */
-    set(index, value) {
+    set(index: number, value: T): void {
         // 葉ノードを更新
         let pos = index + this.#size;
         this.#tree[pos] = value;
         // 親ノードに駆け上がりながら値の更新を繰り返す
         while (pos > 1) {
             pos = Math.floor(pos / 2);
-            this.#tree[pos] = this.#op(this.#tree[pos * 2], this.#tree[pos * 2 + 1]);
+            this.#tree[pos] = this.#op(
+                this.#tree[pos * 2],
+                this.#tree[pos * 2 + 1],
+            );
         }
     }
     /**
      * インデックス`index`の要素を返します。
-     * @param {number} index - 取得する要素のインデックス (0-based)
-     * @returns {T} - 指定されたインデックスの要素
+     * @param index - 取得する要素のインデックス (0-based)
+     * @returns 指定されたインデックスの要素
      */
-    get(index) {
+    get(index: number): T {
         return this.#tree[index + this.#size];
     }
     /**
      * 半開区間[left, right)のモノイド積を計算して返します。
-     * @param {number} left - 区間の左端 (0-based, 含む)
-     * @param {number} right - 区間の右端 (0-based, 含まない)
-     * @returns {T} - 区間のモノイド積
+     * @param left - 区間の左端 (0-based, 含む)
+     * @param right - 区間の右端 (0-based, 含まない)
+     * @returns 指定された区間のモノイド積
      */
-    query(left, right) {
+    query(left: number, right: number): T {
         let sum_left = this.#e;
         let sum_right = this.#e;
         let l = left + this.#size;
@@ -103,27 +108,27 @@ class SegmentTree {
     }
     /**
      * 半開区間[0, n)のモノイド積(すなわち、全要素のモノイド積)を返します。
-     * @returns {T} - 全要素のモノイド積
+     * @returns 全要素のモノイド積
      */
-    queryAll() {
+    queryAll(): T {
         return this.#tree[1];
     }
     /**
      * セグメント木のサイズを返します。
-     * @returns {number} - セグメント木のサイズ
+     * @returns セグメント木のサイズ
      */
-    get size() {
+    get size(): number {
         return this.#originalSize;
     }
     /**
      * 半開区間[l, r)のモノイド積について、条件fnを満たす最大のrを返します。
      * - fn(e)はtrueである必要があり、これを満たさない場合は例外がスローされます。
      * - lは0以上size以下である必要があり、これを満たさない場合は例外がスローされます。
-     * @param {number} l - 区間の左端 (0-based, 含む)
-     * @param {(product: T) => boolean} fn - 条件を表す関数
-     * @returns {number} - 条件fnを満たす最大のr
+     * @param l - 区間の左端 (0-based, 含む)
+     * @param fn - 条件を表す関数
+     * @returns 条件fnを満たす最大のr
      */
-    maxRight(l, fn) {
+    maxRight(l: number, fn: (product: T) => boolean): number {
         if (l < 0 || l > this.#originalSize) {
             throw new RangeError("Index out of bounds");
         }
@@ -163,11 +168,11 @@ class SegmentTree {
      * 半開区間[l, r)のモノイド積について、条件fnを満たす最小のlを返します。
      * - fn(e)はtrueである必要があり、これを満たさない場合は例外がスローされます。
      * - rは0以上size以下である必要があり、これを満たさない場合は例外がスローされます。
-     * @param {number} r - 区間の右端 (0-based, 含まない)
-     * @param {(product: T) => boolean} fn - 条件を表す関数
-     * @returns {number} - 条件fnを満たす最小のl
+     * @param r - 区間の右端 (0-based, 含まない)
+     * @param fn - 条件を表す関数
+     * @returns 条件fnを満たす最小のl
      */
-    minLeft(r, fn) {
+    minLeft(r: number, fn: (product: T) => boolean): number {
         if (r < 0 || r > this.#originalSize) {
             throw new RangeError("Index out of bounds");
         }
@@ -209,6 +214,8 @@ class SegmentTree {
     }
 }
 
-export {
-    SegmentTree,
-};
+// ================================================================
+// エクスポート
+// ================================================================
+
+export { SegmentTree };

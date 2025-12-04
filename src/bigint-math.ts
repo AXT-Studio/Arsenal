@@ -1,24 +1,22 @@
-/**
- * BigIntに関する数学的計算を行うためのユーティリティクラスです。
- * @module bigint-math
- */
-/* ==== 型チェック有効化・型定義ファイルの参照 (Triple-Slash Directives & Deno @ts-self-types) ==== */
-// @ts-check
-/// <reference path="./../declares/bigint-math.d.ts" />
-/* @ts-self-types="./../declares/bigint-math.d.ts" */
+// ================================================================================================
+// entrypoint: bigint-math
+// BigIntに関する数学的計算を行うためのユーティリティクラスです。
+// ================================================================================================
+
+// ================================================================
+// クラス本体
+// ================================================================
 
 class BigIntMath {
     /**
-     * 整数`n`の平方根(を小数点以下切り捨てしたもの)を返します。
-     * @param {bigint} n
-     * @returns {bigint}
+     * 整数`n`の平方根を小数点以下切り捨てした値を返します。
      */
-    static isqrt(n) {
-        // nがbigint型でない場合はエラーを投げる
+    static isqrt(n: bigint): bigint {
+        // nがbigint型でない場合はエラー
         if (typeof n !== "bigint") {
             throw new TypeError("n must be a bigint");
         }
-        // nが負の数の場合はエラーを投げる
+        // nが負の数の場合はエラー
         if (n < 0n) {
             throw new RangeError("n must be non-negative");
         }
@@ -27,7 +25,7 @@ class BigIntMath {
             return BigInt(Math.floor(Math.sqrt(Number(n))));
         }
         // 漸化式の初期値
-        // より効率的なビット長の近似計算: 16進数文字列長 * 4
+        // 効率的なビット長の近似計算: 16進数文字列長 * 4
         const bitLength = BigInt(n.toString(16).length * 4);
         let x0 = 1n << ((bitLength + 1n) / 2n);
         let x1 = (x0 + n / x0) / 2n; // 漸化式で次のステップの値を計算
@@ -43,12 +41,8 @@ class BigIntMath {
     }
     /**
      * 整数`a`, 非負整数`n`, 正整数`m`について、`a ** n % m`を求めます。
-     * @param {bigint} a - 底 (整数)
-     * @param {bigint} n - 指数 (非負整数)
-     * @param {bigint} m - 法 (正整数)
-     * @returns {bigint} - `a ** n % m`の値
      */
-    static modPow(a, n, m) {
+    static modPow(a: bigint, n: bigint, m: bigint): bigint {
         // エラーハンドリング
         if (n < 0n) {
             throw new RangeError("指数nは非負整数でなければなりません。");
@@ -73,17 +67,18 @@ class BigIntMath {
     }
     /**
      * ミラー・ラビン素数判定法による素数判定を行います。
-     * @param {bigint} n - 判定する整数 (2以上)
-     * @param {bigint[]} [bases] - 判定に使用する基数の配列 (省略時は2^64未満で決定的になるよう選定)
-     * @returns {boolean} - 素数でなければfalse、素数かもしれなければtrue (bases省略時、n<2^64なら決定的)
+     * @param n - 判定する整数 (2以上)
+     * @param [bases] - 判定に使用する基数の配列 (省略時は2^64未満で決定的になるよう選定)
+     * @returns  - 素数でなければfalse、素数かもしれなければtrue (bases省略時、n<2^64なら決定的)
      */
-    static doMillerRabin(n, bases) {
+    static doMillerRabin(n: bigint, bases?: bigint[]): boolean {
         // エラーハンドリング
         if (n <= 1n) return false;
         if (n === 2n) return true;
         if (n % 2n === 0n) return false;
         // 基数のリストを先に作っておく
-        const BASES = bases ?? [2n, 325n, 9375n, 28178n, 450775n, 9780504n, 1795265022n];
+        const BASES = bases ??
+            [2n, 325n, 9375n, 28178n, 450775n, 9780504n, 1795265022n];
         // n - 1 = 2^s * d の形に変形 (dが奇数になるまで2で割る)
         let d = n - 1n;
         let s = 0n;
@@ -122,8 +117,8 @@ class BigIntMath {
     }
 }
 
-// ================================================================================================
-// ES Module Export
-// ================================================================================================
+// ================================================================
+// エクスポート
+// ================================================================
 
 export { BigIntMath };

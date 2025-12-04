@@ -27,22 +27,22 @@ AyaExpTech Arsenalは[JSR.io](https://jsr.io/@ayaexptech/arsenal)で公開され
 
 - Web: `esm.sh`からimport
     ```js
-    import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.7.0/binary-search';
+    import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.13.0/binary-search';
     ```
 - Deno: JSRネイティブサポート
     ```js
     // Adhoc import
-    import { lower_bound } from "jsr:@ayaexptech/arsenal@0.7.0/binary-search";
+    import { lower_bound } from "jsr:@ayaexptech/arsenal@0.13.0/binary-search";
     ```
 - Node.js, Bun, Cloudflare Workers, etc.: JSR npm互換レイヤー
     ```bash
     npx jsr add @ayaexptech/arsenal
     ```
     ```js
-    import { lower_bound } from "@ayaexptech/arsenal@0.7.0/binary-search";
+    import { lower_bound } from "@ayaexptech/arsenal@0.13.0/binary-search";
     ```
 
-詳細は[公式ドキュメントのInstallation](https://arsenal.axtech.dev/introduction/installation.md)を参照してください。
+詳細は[公式ドキュメントのInstallation](https://arsenal.axtech.dev/introduction/installation)を参照してください。
 
 ## Contributing
 
