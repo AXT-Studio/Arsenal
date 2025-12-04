@@ -302,6 +302,29 @@ class Treap {
         };
     }
     /**
+     * 再帰的にTreapを走査するためのジェネレーターです。
+     * (自身とその子孫について、in-orderで走査してyieldします)
+     * @template K
+     * @template V
+     * @param {TreapNode<K,V> | null} node
+     * @returns {Generator<{ key: K, value: V }, void, undefined>}
+     */
+    *#inOrderTraversal(node) {
+        if (!node) return;
+        yield* this.#inOrderTraversal(node.left);
+        yield { key: node.key, value: node.value };
+        yield* this.#inOrderTraversal(node.right);
+    }
+    /**
+     * Treap内の全要素をキーの"昇順"に列挙するイテレーターを返します。
+     * @template K
+     * @template V
+     * @returns {Generator<{ key: K, value: V }, void, undefined>}
+     */
+    *[Symbol.iterator]() {
+        yield* this.#inOrderTraversal(this.root);
+    }
+    /**
      * Treap全体の要素数を取得します。
      * @returns {number}
      */

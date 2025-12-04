@@ -31,5 +31,6 @@ export class Treap<K, V> {
         greater: number;
         greaterEqual: number;
     };
+    [Symbol.iterator](): Generator<{ key: K; value: V }, void, undefined>;
     get size(): number;
 }
