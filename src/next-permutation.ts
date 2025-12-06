@@ -8,34 +8,33 @@
 // クラス本体
 // ================================================================
 
+/** Array#sort()でcompareFnを指定しなかったときのデフォルトの挙動と同じ挙動を示す比較関数。aが先なら負、bが先なら正、等しいなら0を返す。 */
+const DEFAULT_COMPARE_FN = (a: unknown, b: unknown): number => {
+    const [A, B] = [String(a), String(b)];
+    return (A < B) ? -1 : (A > B) ? 1 : 0;
+};
+
 /**
  * 呼び出されるたびに配列の次の順列を返すジェネレーター関数。
- * - `for...of`構文で回すことで順列全列挙が可能。
- * - `[...next_permutation(arr)]`のようにスプレッド構文で展開することで全順列を配列として取得可能。
+ * - sort済みの配列を渡して`for...of`構文で回すことで順列全列挙が可能。
+ * - `[...next_permutation(arr)]`のようにスプレッド構文で展開することで配列として取得可能。
  * @param arr 対象となる配列
- * @yields 配列の各要素を並び替えたもの。呼び出されるたびに異なる並び順を辞書順に返し、return(ジェネレーター終了)までにすべての並び方を返します。
+ * @param compareFn 要素の比較関数。デフォルトでは文字列として辞書順に比較。
+ * @yields 配列の各要素を並び替えたもの。呼び出されるたびに異なる並び順を辞書順に返し、辞書順で最も後ろの並び方を返したときにreturn(ジェネレーター終了)します。
  */
 const next_permutation = function* <T>(
     arr: T[],
+    compareFn: (a: T, b: T) => number = DEFAULT_COMPARE_FN,
 ): Generator<T[], void, unknown> {
-    // 最初の順列から開始するため、入力配列のソート済みのコピーを作成する。
-    const a = [...arr].sort((x, y) => {
-        // stringの場合はlocaleCompareで比較
-        if (typeof x === "string" && typeof y === "string") {
-            return x.localeCompare(y);
-        }
-        // string以外は、<, > 演算子で比較可能とみなします。ここはanyを許してくれ
-        if (x as any < y as any) return -1;
-        if (x as any > y as any) return 1;
-        return 0;
-    });
+    // 入力配列のコピーを作成する。
+    const a = [...arr];
 
     while (true) {
         yield [...a]; // 現在の順列のコピーを返す（yield）。
 
         // 1. a[i] < a[i+1] を満たす最大のインデックス i を求める
         let i = a.length - 2;
-        while (i >= 0 && a[i] >= a[i + 1]) {
+        while (i >= 0 && compareFn(a[i], a[i + 1]) >= 0) {
             i--;
         }
 
@@ -46,7 +45,7 @@ const next_permutation = function* <T>(
 
         // 2. a[i] < a[j] を満たす、i より大きい最大のインデックス j を求める
         let j = a.length - 1;
-        while (a[i] >= a[j]) {
+        while (compareFn(a[i], a[j]) >= 0) {
             j--;
         }
 
