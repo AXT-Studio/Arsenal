@@ -12,7 +12,7 @@ const DEFAULT_COMPARE_FN = (a: unknown, b: unknown): number =>
     Number(a) - Number(b);
 
 /**
- * 二分ヒープ (Binary Heap)
+ * 二分ヒープ (Binary Heap) (多機能版)
  */
 class BinaryHeap<T> {
     /** ヒープの要素を格納する配列 0番目は現在の要素数 */
@@ -292,8 +292,173 @@ class BinaryHeap<T> {
     }
 }
 
+/**
+ * 二分ヒープ (Binary Heap) (軽量版)
+ * push, pop, peek, size, clear のみをサポート
+ */
+class BinaryHeapLite<T> {
+    /** ヒープの要素を格納する配列 0番目は現在の要素数 */
+    #elements: [number, ...T[]];
+    /** 比較関数(aの優先度が高いなら負、bの優先度が高いなら正、等しいなら0) */
+    #compareFn: (a: T, b: T) => number;
+    /**
+     * 新しいBinaryHeapLiteインスタンスを生成する
+     * @param compareFn - 比較関数(aの優先度が高いなら負、bの優先度が高いなら正、等しいなら0)
+     * @param [initialValues] - 初期値の配列 (省略可)
+     * @constructor
+     */
+    constructor(
+        compareFn: (a: T, b: T) => number = DEFAULT_COMPARE_FN,
+        initialValues: T[] = [],
+    ) {
+        this.#compareFn = compareFn;
+        this.#elements = [initialValues.length, ...initialValues];
+        // initialValuesのheapify
+        for (let i = Math.floor(this.#elements[0] / 2); i >= 1; i--) {
+            this.#downHeap(i);
+        }
+    }
+    /**
+     * ヒープの要素数を取得する
+     * @returns ヒープの要素数
+     */
+    get size(): number {
+        return this.#elements[0];
+    }
+    /**
+     * 指定要素をdown-heapで再配置する (プライベートメソッド)
+     * @param startIndex - down-heapを開始するインデックス
+     * @returns 最終的な配置先インデックス
+     */
+    #downHeap(startIndex: number): number {
+        let currentIndex = startIndex;
+        while (true) {
+            const leftChildIndex = currentIndex * 2;
+            const rightChildIndex = currentIndex * 2 + 1;
+            if (leftChildIndex > this.#elements[0]) {
+                break; // 子がいない
+            }
+            let compareTargetChildIndex;
+            if (rightChildIndex > this.#elements[0]) {
+                // 右の子がいない場合は左の子と比較で確定する
+                compareTargetChildIndex = leftChildIndex;
+            } else {
+                // 左右の子で優先度が高い方を比較対象にする
+                if (
+                    this.#compareFn(
+                        this.#elements[leftChildIndex] as T,
+                        this.#elements[rightChildIndex] as T,
+                    ) < 0
+                ) {
+                    compareTargetChildIndex = leftChildIndex;
+                } else {
+                    compareTargetChildIndex = rightChildIndex;
+                }
+            }
+            // 親より子の方が優先度高ければ交換
+            if (
+                this.#compareFn(
+                    this.#elements[compareTargetChildIndex] as T,
+                    this.#elements[currentIndex] as T,
+                ) < 0
+            ) {
+                // indexMapを先に更新
+                const currentElement = this.#elements[currentIndex];
+                const childElement = this.#elements[compareTargetChildIndex];
+                // 交換
+                [
+                    this.#elements[currentIndex],
+                    this.#elements[compareTargetChildIndex],
+                ] = [childElement, currentElement];
+                currentIndex = compareTargetChildIndex;
+            } else {
+                break;
+            }
+        }
+        return currentIndex;
+    }
+    /**
+     * 指定要素をup-heapで再配置する (プライベートメソッド)
+     * @param startIndex - up-heapを開始するインデックス
+     * @returns 最終的な配置先インデックス
+     */
+    #upHeap(startIndex: number): number {
+        let currentIndex = startIndex;
+        while (currentIndex > 1) {
+            const parentIndex = Math.floor(currentIndex / 2);
+            // 子の方が優先度高ければ交換
+            if (
+                this.#compareFn(
+                    this.#elements[currentIndex] as T,
+                    this.#elements[parentIndex] as T,
+                ) < 0
+            ) {
+                // indexMapを先に更新
+                const currentElement = this.#elements[currentIndex];
+                const parentElement = this.#elements[parentIndex];
+                // 交換
+                [this.#elements[currentIndex], this.#elements[parentIndex]] = [
+                    parentElement,
+                    currentElement,
+                ];
+                currentIndex = parentIndex;
+            } else {
+                break;
+            }
+        }
+        return currentIndex;
+    }
+    /**
+     * ヒープに要素を追加する
+     * @param value - 追加する要素
+     */
+    push(value: T): void {
+        // 要素を追加
+        this.#elements.push(value);
+        this.#elements[0]++;
+        // up-heap
+        this.#upHeap(this.#elements[0]);
+    }
+    /**
+     * ヒープから最優先の要素を削除して返す
+     * @returns 最優先の要素。ヒープが空の場合は`undefined`
+     */
+    pop(): T | undefined {
+        if (this.#elements[0] === 0) {
+            return undefined;
+        }
+        // ルート要素を退避
+        const topElement = this.#elements[1];
+        // 最後の要素をルートに移動し、要素数を1減らす
+        const lastElement = this.#elements.pop() as T;
+        this.#elements[0]--;
+        if (this.#elements[0] > 0) {
+            this.#elements[1] = lastElement;
+            // down-heap
+            this.#downHeap(1);
+        }
+        return topElement;
+    }
+    /**
+     * ヒープの最優先の要素を参照する
+     * @returns 最優先の要素。ヒープが空の場合は`undefined`
+     */
+    peek(): T | undefined {
+        if (this.#elements[0] === 0) {
+            return undefined;
+        }
+        return this.#elements[1];
+    }
+    /**
+     * ヒープを空にする
+     */
+    clear() {
+        this.#elements = [0];
+    }
+}
+
 // ================================================================
 // エクスポート
 // ================================================================
 
-export { BinaryHeap };
+export { BinaryHeap, BinaryHeapLite };
