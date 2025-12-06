@@ -2,7 +2,11 @@
 
 二分ヒープ (Binary Heap) です。優先度付きキュー (Priority Queue) として利用できます。
 
-[`remove()`](<!-- Need Re-Link -->)・[`update()`](<!-- Need Re-Link -->)が不要である場合は、より軽量な[`BinaryHeapLite`](<!-- Need Re-Link -->)を利用することを推奨します。
+[`remove()`](#binaryheap-t-prototype-remove-value-t-boolean)・[`update()`](##binaryheap-t-prototype-update-oldvalue-t-newvalue-t-boolean)が不要である場合は、より軽量な[`BinaryHeapLite`](./BinaryHeapLite.md)を利用することを推奨します。
+
+:::info TOC
+[[toc]]
+:::
 
 ## Members
 

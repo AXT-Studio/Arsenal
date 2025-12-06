@@ -5,8 +5,8 @@ Priority Queueとして利用できます。
 
 ## exported members
 
-- [`BinaryHeap`](BinaryHeap.md): 二分ヒープの実装クラス
-- [`BinaryHeapLite`](BinaryHeapLite.md): 軽量な二分ヒープの実装クラス
+- [`BinaryHeap`](./BinaryHeap.md): 多機能な二分ヒープの実装クラス
+- [`BinaryHeapLite`](./BinaryHeapLite.md): 軽量な二分ヒープの実装クラス
 
 ## Usage
 

@@ -2,6 +2,10 @@
 
 BigIntに関する数学的計算を行うためのユーティリティクラスです。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `BigIntMath.isqrt(n: bigint): bigint`

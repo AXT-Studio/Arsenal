@@ -1,0 +1,14 @@
+# Entrypoints' Specifications
+
+- [bigint-math](./bigint-math/index.md)
+- [binary-heap](./binary-heap/index.md)
+- [binary-search](./binary-search/index.md)
+- [deque](./deque/index.md)
+- [disjoint-set](./disjoint-set/index.md)
+- [ex-math](./ex-math/index.md)
+- [ex-string](./ex-string/index.md)
+- [geometry](./geometry/index.md)
+- [next-permutation](./next-permutation/index.md)
+- [segment-tree](./segment-tree/index.md)
+- [treap](./treap/index.md)
+- [unique-ids](./unique-ids/index.md)

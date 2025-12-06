@@ -2,6 +2,10 @@
 
 先頭と末尾の両方から効率的に要素の追加・削除が可能なデータ構造である「双方向キュー (Deque: Double-Ended Queue)」です。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `new Deque<T>(array?: readonly T[]): Deque<T>`

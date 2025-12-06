@@ -2,6 +2,10 @@
 
 JavaScript標準の`Math`にない数学的計算を行うためのユーティリティクラスです。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `ExMath.gcd<T extends number | bigint>(a: T, b: T): T`

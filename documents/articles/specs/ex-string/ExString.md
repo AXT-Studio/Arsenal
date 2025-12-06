@@ -2,6 +2,10 @@
 
 文字列操作を行うためのユーティリティクラスです。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `ExString.runLengthEncode(str: string): { char: string; count: number }[]`

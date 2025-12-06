@@ -2,6 +2,10 @@
 
 2次元ベクトルを表すクラスです。平面上の点の座標や方向を表現するのに使用できます。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `new Vector2D(x: number, y: number): Vector2D`

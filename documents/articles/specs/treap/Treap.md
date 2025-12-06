@@ -2,6 +2,10 @@
 
 非回転Treapの実装です。C++の`std::set` / `std::map`に相当する機能を提供します。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `new Treap<K, V>(keyCompareFn?: (a: K, b: K) => number): Treap<K, V>`

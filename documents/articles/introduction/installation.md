@@ -20,7 +20,7 @@ import { <exported_member> } from "https://esm.sh/jsr/@ayaexptech/arsenal@<versi
 
 ## Deno
 
-AyaExpTech Arsenalは[JRS.io](https://jsr.io)で公開されています。
+AyaExpTech Arsenalは[JSR.io](https://jsr.io)で公開されています。
 DenoはJSRをネイティブサポートしているため、以下のようにインポートできます。
 
 ```js

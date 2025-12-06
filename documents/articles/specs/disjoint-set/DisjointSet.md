@@ -2,6 +2,10 @@
 
 素集合データ構造(Disjoint Set Union, 通称Union-Find)のクラスです。
 
+:::info TOC
+[[toc]]
+:::
+
 ## Members
 
 ### `new DisjointSet(size: number): DisjointSet`

@@ -4,7 +4,7 @@ BigIntに関する数学的計算を行うためのユーティリティクラ�
 
 ## exported members
 
-- [`BigIntMath`](BigIntMath.md): BigIntに関する数学的計算を行うためのユーティリティクラス
+- [`BigIntMath`](./BigIntMath.md): BigIntに関する数学的計算を行うためのユーティリティクラス
 
 ## Usage
 

@@ -17,7 +17,11 @@ export default defineConfig({
             { icon: 'github', link: 'https://github.com/AXT-Studio/Arsenal' },
             { icon: 'jsr', link: 'https://jsr.io/@ayaexptech/arsenal' },
         ],
-        outline: "deep"
+        outline: "deep",
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright (c) 2025- AyaExpTech'
+        }
     },
 
     markdown: {
