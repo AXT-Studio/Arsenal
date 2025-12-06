@@ -18,5 +18,5 @@
     import { SegmentTree } from "jsr:@ayaexptech/arsenal/segment-tree";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/segment-tree.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/segment-tree.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/segment-tree)

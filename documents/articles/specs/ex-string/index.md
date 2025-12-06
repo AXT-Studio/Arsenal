@@ -18,5 +18,5 @@
     import { ExString } from "jsr:@ayaexptech/arsenal/ex-string";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/ex-string.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/ex-string.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/ex-string)

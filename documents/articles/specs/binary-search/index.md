@@ -20,5 +20,5 @@
     import { binary_search, lower_bound, upper_bound } from "jsr:@ayaexptech/arsenal/binary-search";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/ayaexptech/Arsenal/tree/main/src/binary-search)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/binary-search.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/binary-search)

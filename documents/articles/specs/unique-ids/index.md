@@ -18,5 +18,5 @@
     import { getUUIDv7 } from "jsr:@ayaexptech/arsenal/unique-ids";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/unique-ids.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/unique-ids.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/unique-ids)

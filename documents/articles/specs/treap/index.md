@@ -18,5 +18,5 @@
     import { Treap } from "jsr:@ayaexptech/arsenal/treap";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/treap.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/treap.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/treap)

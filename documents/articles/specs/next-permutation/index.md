@@ -18,5 +18,5 @@ C++の`std::next_permutation`に相当する、配列の次の順列を生成す
     import { nextPermutation } from "jsr:@ayaexptech/arsenal/next-permutation";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/next-permutation.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/next-permutation.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/next-permutation)
