@@ -20,5 +20,5 @@
     import { Vector2D, CCW, isSegmentsIntersect } from "jsr:@ayaexptech/arsenal/geometry";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/geometry.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/geometry.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/geometry)

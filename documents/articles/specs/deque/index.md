@@ -18,5 +18,5 @@
     import { Deque } from "jsr:@ayaexptech/arsenal/deque";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/ayaexptech/Arsenal/tree/main/src/deque)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/deque.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/deque)

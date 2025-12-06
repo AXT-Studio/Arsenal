@@ -18,5 +18,5 @@ JavaScript標準の`Math`にない数学的計算を行うためのユーティ�
     import { ExMath } from "jsr:@ayaexptech/arsenal/ex-math";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/AYAExpTech/Arsenal/blob/main/src/ex-math.ts)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/ex-math.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/ex-math)

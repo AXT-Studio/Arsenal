@@ -22,5 +22,5 @@ AyaExpTech Arsenalで提供されるDisjoint Set Unionは、経路圧縮とUnion
     import { DisjointSet } from "jsr:@ayaexptech/arsenal/disjoint-set";
     ```
 - View...
-    - [Source Code on GitHub](https://github.com/ayaexptech/Arsenal/tree/main/src/disjoint-set)
+    - [Source Code on GitHub](https://github.com/AXT-Studio/Arsenal/blob/main/src/disjoint-set.ts)
     - [Docs on JSR.io](https://jsr.io/@ayaexptech/arsenal/doc/disjoint-set)
