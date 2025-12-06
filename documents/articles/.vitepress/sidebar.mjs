@@ -10,13 +10,7 @@ const sidebar = [
         items: [
             {
                 text: 'bigint-math', link: '/specs/bigint-math/', collapsed: true, items: [
-                    {
-                        text: 'class: BigIntMath', link: '/specs/bigint-math/BigIntMath/', collapsed: true, items: [
-                            { text: 'static method: isqrt', link: '/specs/bigint-math/BigIntMath/isqrt' },
-                            { text: 'static method: modPow', link: '/specs/bigint-math/BigIntMath/modPow' },
-                            { text: 'static method: doMillerRabin', link: '/specs/bigint-math/BigIntMath/doMillerRabin' },
-                        ]
-                    },
+                    { text: 'class: BigIntMath', link: '/specs/bigint-math/BigIntMath' },
                 ]
             },
             {
