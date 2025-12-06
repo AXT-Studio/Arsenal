@@ -11,6 +11,9 @@
 const DEFAULT_COMPARE_FN = (a: unknown, b: unknown): number =>
     Number(a) - Number(b);
 
+/**
+ * 二分ヒープ (Binary Heap)
+ */
 class BinaryHeap<T> {
     /** ヒープの要素を格納する配列 0番目は現在の要素数 */
     #elements: [number, ...T[]];
