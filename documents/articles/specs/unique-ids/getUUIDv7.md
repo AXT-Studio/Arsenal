@@ -2,12 +2,8 @@
 
 UUIDv7を生成します。
 
-## 構文
+### `getUUIDv7(timestamp?: number): string`
 
-```js
-getUUIDv7();
-getUUIDv7(timestamp);
-```
 
 ### 引数
 
