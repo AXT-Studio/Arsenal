@@ -1,13 +1,12 @@
 const sidebar = [
     {
         text: 'Introduction', link: '/introduction/', collapsed: false, items: [
-            { text: 'What is "AyaExpTech Arsenal"?', link: '/introduction/what-is-arsenal' },
             { text: 'Installation', link: '/introduction/installation' },
-            { text: 'Modules Overview', link: '/introduction/modules-overview' },
+            { text: 'Q&A', link: '/introduction/q_and_a' },
         ]
     },
     {
-        text: 'Specifications',
+        text: 'Entrypoints\' Specs',
         items: [
             {
                 text: 'bigint-math', link: '/specs/bigint-math/', collapsed: true, items: [

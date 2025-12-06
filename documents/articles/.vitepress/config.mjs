@@ -4,7 +4,7 @@ import { sidebar } from './sidebar.mjs'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     title: "AyaExpTech Arsenal",
-    description: "General-purpose JavaScript library by AyaExpTech",
+    description: "A General-purpose JS/TS Library by AyaExpTech",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
@@ -24,5 +24,9 @@ export default defineConfig({
         math: true,
         breaks: true
     },
-    ignoreDeadLinks: true
+    ignoreDeadLinks: true,
+
+    head: [
+        ['link', { rel: 'icon', href: '/images/favicon.svg', type: 'image/svg+xml' }]
+    ]
 })

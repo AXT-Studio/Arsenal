@@ -2,40 +2,31 @@
 
 このセクションでは、AyaExpTech Arsenalの使用手順について説明します。
 
-## Web
+## Websites
 
 AyaExpTech Arsenalの各モジュールは、[esm.sh](https://esm.sh)を介してWebプロジェクトで使用できます。
-アクセスすべきURLの形式は以下の通りです。
 
-```
-https://esm.sh/jsr/@ayaexptech/arsenal/<entrypoint>
-https://esm.sh/jsr/@ayaexptech/arsenal@<version>/<entrypoint>
-```
-
-:::details 使用例
-例えば、[entrypoint: binary-search](./../../specs/binary-search/)の[`lower_bound`関数](./../../specs/binary-search/lower_bound.md)を使用したい場合、以下のようにインポートできます。
+- 基本的に、`https://esm.sh/jsr/@ayaexptech/arsenal@<version>/<entrypoint>`の形式でアクセスします。
+    - `<version>`は省略可能で、省略した場合は最新バージョンが使用されます。
+    - `<entrypoint>`は使用したいモジュールのエントリポイント名です。
+    - クエリパラメーターとして`target=`を指定することで、特定のJavaScriptバージョン向けに最適化されたコードを取得できます。
+        - 例: `?target=es2024`, `?target=esnext`など
+        - 使用可能な`target`は、[esm.shのドキュメント](https://esm.sh/#esbuild-options)を参照してください。
 
 ```js
-import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal/binary-search';
+// Adhoc import
+import { <exported_member> } from "https://esm.sh/jsr/@ayaexptech/arsenal@<version>/<entrypoint>?target=es2024";
 ```
-
-バージョンを指定したい場合、以下のようにインポートします。
-
-```js
-import { lower_bound } from 'https://esm.sh/jsr/@ayaexptech/arsenal@0.7.0/binary-search';
-```
-:::
 
 ## Deno
 
+AyaExpTech Arsenalは[JRS.io](https://jsr.io)で公開されています。
 DenoはJSRをネイティブサポートしているため、以下のようにインポートできます。
 
 ```js
 // Adhoc import
-import { lower_bound } from "jsr:@ayaexptech/arsenal@0.7.0/binary-search";
+import { <exported_member> } from "jsr:@ayaexptech/arsenal@<version>/<entrypoint>";
 ```
-
-Deno環境では`d.ts`も自動的に読み込まれるため、型情報も利用可能です。
 
 ## Node.js, Bun, Cloudflare Workers, etc.
 
@@ -45,5 +36,5 @@ JSRはnpmの互換レイヤーを提供しているため、以下のように�
 npx jsr add @ayaexptech/arsenal
 ```
 ```js
-import { lower_bound } from "@ayaexptech/arsenal@0.7.0/binary-search";
+import { <exported_member> } from "@ayaexptech/arsenal/<entrypoint>";
 ```
