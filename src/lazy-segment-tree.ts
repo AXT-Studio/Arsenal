@@ -148,11 +148,15 @@ class LazySegmentTree<S, F> {
         // 木の高さから1までループを回せばよい
         for (let i = this.#log; i > 0; i--) {
             // left側のノードを伝播
-            const leftNode = left >> i;
-            this.#push(leftNode);
+            if (((left >> i) << i) !== left) {
+                const leftNode = left >> i;
+                this.#push(leftNode);
+            }
             // right側のノードを伝播
-            const rightNode = (right - 1) >> i;
-            this.#push(rightNode);
+            if (((right >> i) << i) !== right) {
+                const rightNode = (right - 1) >> i;
+                this.#push(rightNode);
+            }
         }
     }
     /**
@@ -167,11 +171,15 @@ class LazySegmentTree<S, F> {
         const right = r + this.#size;
         for (let i = 1; i <= this.#log; i++) {
             // left側のノードを更新
-            const leftNode = left >> i;
-            this.#update(leftNode);
+            if (((left >> i) << i) !== left) {
+                const leftNode = left >> i;
+                this.#update(leftNode);
+            }
             // right側のノードを更新
-            const rightNode = (right - 1) >> i;
-            this.#update(rightNode);
+            if (((right >> i) << i) !== right) {
+                const rightNode = (right - 1) >> i;
+                this.#update(rightNode);
+            }
         }
     }
     /**
