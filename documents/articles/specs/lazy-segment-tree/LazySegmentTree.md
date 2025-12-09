@@ -41,6 +41,10 @@
 :::
 ::::
 
+:::info TOC
+[[toc]]
+:::
+
 ### `new LazySegmentTree<S, F>(e: S, op: (a: S, b: S) => S, mapping: (s: S, f: F) => S, id: F, composition: (newF: F, oldF: F) => F, size: number, initialValues?: S[]): LazySegmentTree<S, F>`
 
 `LazySegmentTree`クラスのコンストラクタです。新しい`LazySegmentTree`インスタンスを作成します。
