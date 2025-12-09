@@ -26,6 +26,7 @@
         "./ex-math": "./src/ex-math.ts",
         "./ex-string": "./src/ex-string.ts",
         "./geometry": "./src/geometry.ts",
+        "./lazy-segment-tree": "./src/lazy-segment-tree.ts",
         "./next-permutation": "./src/next-permutation.ts",
         "./segment-tree": "./src/segment-tree.ts",
         "./treap": "./src/treap.ts",

@@ -8,6 +8,7 @@
 - [ex-math](./ex-math/index.md)
 - [ex-string](./ex-string/index.md)
 - [geometry](./geometry/index.md)
+- [lazy-segment-tree](./lazy-segment-tree/index.md)
 - [next-permutation](./next-permutation/index.md)
 - [segment-tree](./segment-tree/index.md)
 - [treap](./treap/index.md)
