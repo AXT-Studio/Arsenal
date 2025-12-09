@@ -56,6 +56,11 @@ const sidebar = [
                 ]
             },
             {
+                text: 'lazy-segment-tree', link: '/specs/lazy-segment-tree/', collapsed: true, items: [
+                    { text: 'class: LazySegmentTree', link: '/specs/lazy-segment-tree/LazySegmentTree' },
+                ]
+            },
+            {
                 text: 'next-permutation', link: '/specs/next-permutation/', collapsed: true, items: [
                     { text: 'function: next_permutation', link: '/specs/next-permutation/next_permutation' },
                 ]
