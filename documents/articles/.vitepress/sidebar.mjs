@@ -61,6 +61,11 @@ const sidebar = [
                 ]
             },
             {
+                text: 'linear-sieve', link: '/specs/linear-sieve/', collapsed: true, items: [
+                    { text: 'class: LinearSieve', link: '/specs/linear-sieve/LinearSieve' },
+                ]
+            },
+            {
                 text: 'next-permutation', link: '/specs/next-permutation/', collapsed: true, items: [
                     { text: 'function: next_permutation', link: '/specs/next-permutation/next_permutation' },
                 ]
