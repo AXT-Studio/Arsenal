@@ -1,4 +1,4 @@
-# entrypoint: liner-sieve
+# entrypoint: linear-sieve
 
 線形篩アルゴリズムとその関連メソッドを提供します。
 

@@ -14,7 +14,7 @@ class LinearSieve {
     /**
      * N以下のすべての整数の最小素因数を列挙します。
      * @param N 最大値。
-     * @returns 1からNまでの整数の最小素因数を列挙した配列。
+     * @returns 0からNまでを添字とする長さN+1の配列。各i (2 ≦ i ≦ N) について`mpf[i]`はiの最小素因数を表し、`mpf[0]`および`mpf[1]`は`NaN`になります。
      * @remarks
      * - `mpf[i]`はiの最小素因数を表します。
      * - `mpf[0]`・`mpf[1]`は`NaN`になります。
@@ -40,7 +40,7 @@ class LinearSieve {
     /**
      * N以下のすべての素数を列挙します。
      * @param N 最大値。
-     * @returns 1からNまでの素数を昇順で列挙した配列。
+     * @returns N以下のすべての素数を昇順で列挙した配列。
      * @remarks
      * - `N < 2`の場合は空配列を返します。
      */
@@ -61,7 +61,7 @@ class LinearSieve {
      * @remarks
      * - `N < 2`の場合は空配列を返します。
      */
-    public static primeFactorization(N: number): number[] {
+    public static factorize(N: number): number[] {
         if (N < 2) return [];
         const mpf = this.getAllMPF(N);
         let now = N;
