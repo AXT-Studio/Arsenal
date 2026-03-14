@@ -144,9 +144,9 @@ class MaxFlow {
         return visited;
     }
     /**
-     * n番目に追加された辺の情報を返す。
+     * i番目に追加された辺の情報を返す。
      * @param i - 辺の番号 (0-indexed)
-     * @return n番目に追加された辺の情報 {from, to, cap, flow} capは辺の容量、flowは現在流れている流量
+     * @return i番目に追加された辺の情報 {from, to, cap, flow} capは辺の容量、flowは現在流れている流量
      */
     getEdge(i: number): PublicEdge {
         const [from, index] = this.#pos[i];
