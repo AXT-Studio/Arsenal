@@ -66,6 +66,11 @@ const sidebar = [
                 ]
             },
             {
+                text: 'max-flow', link: '/specs/max-flow/', collapsed: true, items: [
+                    { text: 'class: MaxFlow', link: '/specs/max-flow/MaxFlow' },
+                ]
+            },
+            {
                 text: 'next-permutation', link: '/specs/next-permutation/', collapsed: true, items: [
                     { text: 'function: next_permutation', link: '/specs/next-permutation/next_permutation' },
                 ]

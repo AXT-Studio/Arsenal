@@ -10,6 +10,7 @@
 - [geometry](./geometry/index.md)
 - [lazy-segment-tree](./lazy-segment-tree/index.md)
 - [linear-sieve](./linear-sieve/index.md)
+- [max-flow](./max-flow/index.md)
 - [next-permutation](./next-permutation/index.md)
 - [segment-tree](./segment-tree/index.md)
 - [treap](./treap/index.md)
