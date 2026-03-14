@@ -54,11 +54,17 @@ class MaxFlow {
      */
     addEdge(from: number, to: number, cap: number): number {
         const m = this.#pos.length;
-        this.#pos.push([from, this.#graph[from].length]);
-        this.#graph[from].push({ to, rev: this.#graph[to].length, cap });
+        const fromId = this.#graph[from].length;
+        const toId = this.#graph[to].length;
+        this.#pos.push([from, fromId]);
+        this.#graph[from].push({
+            to,
+            rev: toId + (from === to ? 1 : 0), // 自己ループのときは逆辺も同じ場所に追加されるので、revはtoId+1になる
+            cap,
+        });
         this.#graph[to].push({
             to: from,
-            rev: this.#graph[from].length - 1,
+            rev: fromId,
             cap: 0,
         });
         return m;
