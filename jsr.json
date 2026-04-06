@@ -18,20 +18,6 @@
         "wrangler.jsonc"
     ],
     "exports": {
-        "./bigint-math": "./src/bigint-math.ts",
-        "./binary-heap": "./src/binary-heap.ts",
-        "./binary-search": "./src/binary-search.ts",
-        "./deque": "./src/deque.ts",
-        "./disjoint-set": "./src/disjoint-set.ts",
-        "./ex-math": "./src/ex-math.ts",
-        "./ex-string": "./src/ex-string.ts",
-        "./geometry": "./src/geometry.ts",
-        "./lazy-segment-tree": "./src/lazy-segment-tree.ts",
-        "./linear-sieve": "./src/linear-sieve.ts",
-        "./max-flow": "./src/max-flow.ts",
-        "./next-permutation": "./src/next-permutation.ts",
-        "./segment-tree": "./src/segment-tree.ts",
-        "./treap": "./src/treap.ts",
-        "./unique-ids": "./src/unique-ids.ts"
+        ".": "./src/index.ts"
     }
 }
