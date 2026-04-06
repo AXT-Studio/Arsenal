@@ -11,83 +11,83 @@ const sidebar = [
         collapsed: false,
         items: [
             {
-                text: 'bigint-math', link: '/specs/bigint-math/', collapsed: true, items: [
-                    { text: 'class: BigIntMath', link: '/specs/bigint-math/BigIntMath' },
+                text: 'Math for BigInts', collapsed: true, items: [
+                    { text: 'class: BigIntMath', link: '/specs/BigIntMath' },
                 ]
             },
             {
-                text: 'binary-heap', link: '/specs/binary-heap/', collapsed: true, items: [
-                    { text: 'class: BinaryHeap', link: '/specs/binary-heap/BinaryHeap' },
-                    { text: 'class: BinaryHeapLite', link: '/specs/binary-heap/BinaryHeapLite' }
+                text: '二分ヒープ', collapsed: true, items: [
+                    { text: 'class: BinaryHeap', link: '/specs/BinaryHeap' },
+                    { text: 'class: BinaryHeapLite', link: '/specs/BinaryHeapLite' }
                 ]
             },
             {
-                text: 'binary-search', link: '/specs/binary-search/', collapsed: true, items: [
-                    { text: 'function: binary_search', link: '/specs/binary-search/binary_search' },
-                    { text: 'function: lower_bound', link: '/specs/binary-search/lower_bound' },
-                    { text: 'function: upper_bound', link: '/specs/binary-search/upper_bound' },
+                text: '二分探索', collapsed: true, items: [
+                    { text: 'function: binary_search', link: '/specs/binary_search' },
+                    { text: 'function: lower_bound', link: '/specs/lower_bound' },
+                    { text: 'function: upper_bound', link: '/specs/upper_bound' },
                 ]
             },
             {
-                text: 'deque', link: '/specs/deque/', collapsed: true, items: [
-                    { text: 'class: Deque', link: '/specs/deque/Deque/' },
+                text: 'Deque', collapsed: true, items: [
+                    { text: 'class: Deque', link: '/specs/Deque' },
                 ]
             },
             {
-                text: 'disjoint-set', link: '/specs/disjoint-set/', collapsed: true, items: [
-                    { text: 'class: DisjointSet', link: '/specs/disjoint-set/DisjointSet/' },
+                text: 'Disjoint Set (Union-Find)', collapsed: true, items: [
+                    { text: 'class: DisjointSet', link: '/specs/DisjointSet' },
                 ]
             },
             {
-                text: 'ex-math', link: '/specs/ex-math/', collapsed: true, items: [
-                    { text: 'class: ExMath', link: '/specs/ex-math/ExMath/' },
+                text: 'Extended Math', collapsed: true, items: [
+                    { text: 'class: ExMath', link: '/specs/ExMath' },
                 ]
             },
             {
-                text: 'ex-string', link: '/specs/ex-string/', collapsed: true, items: [
-                    { text: 'class: ExString', link: '/specs/ex-string/ExString/' },
+                text: 'Extended String', collapsed: true, items: [
+                    { text: 'class: ExString', link: '/specs/ExString' },
                 ]
             },
             {
-                text: 'geometry', link: '/specs/geometry/', collapsed: true, items: [
-                    { text: 'class: Vector2D', link: '/specs/geometry/Vector2D/' },
-                    { text: 'function: CCW', link: '/specs/geometry/CCW' },
-                    { text: 'function: isSegmentsIntersect', link: '/specs/geometry/isSegmentsIntersect' },
+                text: '幾何学系 (Geometry)', collapsed: true, items: [
+                    { text: 'class: Vector2D', link: '/specs/Vector2D/' },
+                    { text: 'function: CCW', link: '/specs/CCW' },
+                    { text: 'function: isSegmentsIntersect', link: '/specs/isSegmentsIntersect' },
                 ]
             },
             {
-                text: 'lazy-segment-tree', link: '/specs/lazy-segment-tree/', collapsed: true, items: [
-                    { text: 'class: LazySegmentTree', link: '/specs/lazy-segment-tree/LazySegmentTree' },
+                text: '遅延セグメント木', collapsed: true, items: [
+                    { text: 'class: LazySegmentTree', link: '/specs/LazySegmentTree' },
                 ]
             },
             {
-                text: 'linear-sieve', link: '/specs/linear-sieve/', collapsed: true, items: [
-                    { text: 'class: LinearSieve', link: '/specs/linear-sieve/LinearSieve' },
+                text: '線形篩', collapsed: true, items: [
+                    { text: 'class: LinearSieve', link: '/specs/LinearSieve' },
                 ]
             },
             {
-                text: 'max-flow', link: '/specs/max-flow/', collapsed: true, items: [
-                    { text: 'class: MaxFlow', link: '/specs/max-flow/MaxFlow' },
+                text: '最大流 (max-flow)', collapsed: true, items: [
+                    { text: 'class: MaxFlow', link: '/specs/MaxFlow' },
                 ]
             },
             {
-                text: 'next-permutation', link: '/specs/next-permutation/', collapsed: true, items: [
-                    { text: 'function: next_permutation', link: '/specs/next-permutation/next_permutation' },
+                text: '順列全列挙', collapsed: true, items: [
+                    { text: 'function: next_permutation', link: '/specs/next_permutation' },
                 ]
             },
             {
-                text: 'segment-tree', link: '/specs/segment-tree/', collapsed: true, items: [
-                    { text: 'class: SegmentTree', link: '/specs/segment-tree/SegmentTree' }
+                text: 'セグメント木', collapsed: true, items: [
+                    { text: 'class: SegmentTree', link: '/specs/SegmentTree' }
                 ]
             },
             {
-                text: 'treap', link: '/specs/treap/', collapsed: true, items: [
-                    { text: 'class: Treap', link: '/specs/treap/Treap' }
+                text: '平衡二分探索木 (Treap)', collapsed: true, items: [
+                    { text: 'class: Treap', link: '/specs/Treap' }
                 ]
             },
             {
-                text: 'unique-ids', link: '/specs/unique-ids/', collapsed: true, items: [
-                    { text: 'function: getUUIDv7', link: '/specs/unique-ids/getUUIDv7' },
+                text: 'Unique IDs', collapsed: true, items: [
+                    { text: 'function: getUUIDv7', link: '/specs/getUUIDv7' },
                 ]
             },
         ]
