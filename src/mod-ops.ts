@@ -8,9 +8,10 @@
 // ================================================================
 
 /**
- * 自然数a, bについて、ax + by = g (g = gcd(a, b)) を満たす整数x, yを求めます。
- * @param a - 自然数a
- * @param b - 自然数b
+ * 非負整数a, bについて、ax + by = g を満たす整数x, yを求めます。
+ * なお、ここで g = gcd(a, b) とし、a = b = 0 のときは g = 0 とします。
+ * @param a - 非負整数a
+ * @param b - 非負整数b
  * @returns [g, x, y] - gはaとbの最大公約数、xとyはax + by = gを満たす整数
  */
 function extendedGCD(a: bigint, b: bigint): [bigint, bigint, bigint] {
@@ -119,11 +120,11 @@ class ModOps {
      * @returns valuesの総積をこのModOpsの法で割った余り
      */
     prod(...values: bigint[]): bigint {
-        let total = 1n;
+        let total = this.normalize(1n);
         for (const value of values) {
             total = this.mul(total, value);
         }
-        return total;
+        return this.normalize(total);
     }
 
     /**
