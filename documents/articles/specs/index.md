@@ -35,3 +35,5 @@
     - [class: `Treap`](./Treap.md)
 - Unique IDs
     - [function: `getUUIDv7`](./getUUIDv7.md)
+- modを取りながら計算
+    - [class: `ModOps`](./ModOps.md)

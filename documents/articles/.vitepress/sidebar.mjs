@@ -90,6 +90,11 @@ const sidebar = [
                     { text: 'function: getUUIDv7', link: '/specs/getUUIDv7' },
                 ]
             },
+            {
+                text: 'Modular Operations', collapsed: true, items: [
+                    { text: 'class: ModOps', link: '/specs/ModOps' },
+                ]
+            }
         ]
     }
 ];

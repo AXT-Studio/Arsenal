@@ -153,7 +153,7 @@ class ModOps {
     }
 
     /**
-     * 設定された法が素数であることを前提として、このModOpsの法におけるaの逆元を返す
+     * このModOpsの法におけるaの逆元を返す
      * (法pにおけるaの逆元 ... av≡1 (mod p) を満たす0以上p未満の唯一の整数vのこと。1÷a≡v(mod p)と考えることもできる)
      * @param a - 逆元を求めるbigint
      * @returns aのこのModOpsの法における逆元
