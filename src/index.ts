@@ -14,3 +14,4 @@ export { SegmentTree } from "./segment-tree.ts";
 export { Treap } from "./treap.ts";
 export type { TreapNode } from "./treap.ts";
 export { getUUIDv7 } from "./unique-ids.ts";
+export { ModOps } from "./mod-ops.ts";
